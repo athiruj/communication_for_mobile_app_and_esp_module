@@ -11,6 +11,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: ThemeData(
+          fontFamily: "Poppins",
           // applyElevationOverlayColor: applyElevationOverlayColor,
           // cupertinoOverrideTheme: cupertinoOverrideTheme,
           // extensions: extensions,
@@ -42,7 +43,7 @@ class MainApp extends StatelessWidget {
           // hintColor: hintColor,
           // hoverColor: hoverColor,
           // indicatorColor: indicatorColor,
-          primaryColor: Colors.black,
+          primaryColor: const Color(0xFF050301),
           // primaryColorDark: primaryColorDark,
           // primaryColorLight: primaryColorLight,
           scaffoldBackgroundColor: const Color(0xFFFCFBFC),
@@ -53,11 +54,38 @@ class MainApp extends StatelessWidget {
           // iconTheme: iconTheme,
           // primaryIconTheme: primaryIconTheme,
           primaryTextTheme: const TextTheme(
-            titleMedium: TextStyle(fontSize: 24,color: Color(0xFF050301)),
-            titleSmall: TextStyle(fontSize: 20,color: Color(0xFF050301)),
-            bodyLarge: TextStyle(fontSize: 18,color: Color(0xFF050301)),
-            bodyMedium: TextStyle(fontSize: 16,color: Color(0xFF050301)),
-            bodySmall: TextStyle(fontSize: 14,color: Color(0xFF050301)),
+            titleMedium: TextStyle(
+                fontSize: 24,
+                color: Color(0xFF050301),
+                fontWeight: FontWeight.w600),
+            titleSmall: TextStyle(
+                fontSize: 20,
+                color: Color(0xFF050301),
+                fontWeight: FontWeight.w600),
+            bodyLarge: TextStyle(
+                fontSize: 18,
+                color: Color(0xFF050301),
+                fontWeight: FontWeight.w500),
+            bodyMedium: TextStyle(
+                fontSize: 16,
+                color: Color(0xFF050301),
+                fontWeight: FontWeight.w500),
+            bodySmall: TextStyle(
+                fontSize: 14,
+                color: Color(0xFF050301),
+                fontWeight: FontWeight.w500),
+            labelLarge: TextStyle(
+                fontSize: 18,
+                color: Color(0xFFB6B5B4),
+                fontWeight: FontWeight.w400),
+            labelMedium: TextStyle(
+                fontSize: 16,
+                color: Color(0xFFB6B5B4),
+                fontWeight: FontWeight.w400),
+            labelSmall: TextStyle(
+                fontSize: 14,
+                color: Color(0xFFB6B5B4),
+                fontWeight: FontWeight.w400),
           ),
           // textTheme: TextTheme(),
           // typography: typography,
@@ -230,7 +258,38 @@ class _MyHomepageState extends State<MyHomepage> {
                 width: 50,
                 color: Theme.of(context).colorScheme.surfaceVariant,
               ),
-              Text("title Mid",style: Theme.of(context).primaryTextTheme.titleMedium,)
+              Text(
+                "Title Medium",
+                style: Theme.of(context).primaryTextTheme.titleMedium,
+              ),
+              Text(
+                "Title Small",
+                style: Theme.of(context).primaryTextTheme.titleSmall,
+              ),
+              Text(
+                "Body Large",
+                style: Theme.of(context).primaryTextTheme.bodyLarge,
+              ),
+              Text(
+                "Body Medium",
+                style: Theme.of(context).primaryTextTheme.bodyMedium,
+              ),
+              Text(
+                "Body Small",
+                style: Theme.of(context).primaryTextTheme.bodySmall,
+              ),
+              Text(
+                "Label Large",
+                style: Theme.of(context).primaryTextTheme.labelLarge,
+              ),
+              Text(
+                "Label Medium",
+                style: Theme.of(context).primaryTextTheme.labelMedium,
+              ),
+              Text(
+                "Label Small",
+                style: Theme.of(context).primaryTextTheme.labelSmall,
+              ),
             ],
           ),
         ),
