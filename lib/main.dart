@@ -372,11 +372,10 @@ class NormalLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: NormalBox("Text"),
+      child: NormalBoxWithImage("Text"),
     );
   }
 }
-
 
 class NormalBox extends StatelessWidget {
   final String text;
@@ -421,6 +420,55 @@ class NormalBox extends StatelessWidget {
   }
 }
 
+class NormalBoxWithImage extends StatelessWidget {
+  final String text;
+  final StatusBar? statusBar;
+  const NormalBoxWithImage(this.text, {super.key, this.statusBar});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.only(
+        left: 8,
+        right: 32,
+        top: 8,
+        bottom: 8,
+      ),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(32),
+        color: Theme.of(context).colorScheme.surface,
+      ),
+      constraints: const BoxConstraints.expand(
+        height: 136,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.onPrimary,
+              borderRadius: BorderRadius.circular(32),
+            ),
+            height: 120,
+            width: 120,
+          ),
+          Text(
+            text,
+            style: Theme.of(context).primaryTextTheme.titleMedium?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            child: statusBar ?? const StatusBar(),
+          )
+        ],
+      ),
+    );
+  }
+}
+
 /// Status Bar cover the parent height
 /// * StatusBar()
 /// * StatusBar.blue()
@@ -436,7 +484,7 @@ class StatusBar extends StatelessWidget {
     return Container(
       constraints: const BoxConstraints.expand(width: 6),
       decoration: BoxDecoration(
-        color: color ?? Theme.of(context).colorScheme.onSurface,
+        color: color ?? Theme.of(context).colorScheme.surfaceTint,
         borderRadius: BorderRadius.circular(3),
       ),
     );
