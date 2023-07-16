@@ -171,7 +171,7 @@ class MainApp extends StatelessWidget {
           primaryColor: const Color(0xFFFCFBFC),
           // primaryColorDark: primaryColorDark,
           // primaryColorLight: primaryColorLight,
-          scaffoldBackgroundColor: const Color(0xFF050301),
+          scaffoldBackgroundColor: const Color(0xFF0F0F0F),
           // secondaryHeaderColor: secondaryHeaderColor,
           // shadowColor: shadowColor,
           // splashColor: splashColor,
@@ -371,14 +371,34 @@ class NormalLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Container(
-      padding: const EdgeInsets.only(left: 52, right: 32, top: 16, bottom: 16),
+    return const Center(
+      child: NormalBox("Text"),
+    );
+  }
+}
+
+
+class NormalBox extends StatelessWidget {
+  final String text;
+  final StatusBar? statusBar;
+  const NormalBox(this.text, {super.key, this.statusBar});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.only(
+        left: 52,
+        right: 32,
+        top: 16,
+        bottom: 16,
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(32),
         color: Theme.of(context).colorScheme.surface,
       ),
-      constraints: const BoxConstraints.expand(height: 136),
+      constraints: const BoxConstraints.expand(
+        height: 136,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -389,13 +409,15 @@ class NormalLayout extends StatelessWidget {
             width: 52,
           ),
           Text(
-            "TEXT HERE",
-            style: Theme.of(context).primaryTextTheme.titleMedium,
+            text,
+            style: Theme.of(context).primaryTextTheme.titleMedium?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
           ),
-          StatusBar.green()
+          statusBar ?? const StatusBar()
         ],
       ),
-    ));
+    );
   }
 }
 
