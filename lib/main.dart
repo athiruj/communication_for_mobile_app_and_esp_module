@@ -359,9 +359,7 @@ class LayoutBase extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      
-      body: LayoutBuilder(
+    return Scaffold(body: LayoutBuilder(
         builder: ((BuildContext context, BoxConstraints constraints) {
       return const NormalLayout();
     })));
@@ -374,19 +372,30 @@ class NormalLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: SizedBox(
-        height: 104,
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const StatusBar(),
-              StatusBar.blue(),
-              StatusBar.green(),
-              StatusBar.none(),
-            ]),
+        child: Container(
+      padding: const EdgeInsets.only(left: 52, right: 32, top: 16, bottom: 16),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(32),
+        color: Theme.of(context).colorScheme.surface,
       ),
-    );
+      constraints: const BoxConstraints.expand(height: 136),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            color: Colors.amber,
+            height: 52,
+            width: 52,
+          ),
+          Text(
+            "TEXT HERE",
+            style: Theme.of(context).primaryTextTheme.titleMedium,
+          ),
+          StatusBar.green()
+        ],
+      ),
+    ));
   }
 }
 
@@ -398,13 +407,16 @@ class NormalLayout extends StatelessWidget {
 class StatusBar extends StatelessWidget {
   final int width = 6;
   final Color? color;
-  const StatusBar({super.key,this.color});
+  const StatusBar({super.key, this.color});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: color ?? Theme.of(context).colorScheme.onSurface,
       constraints: const BoxConstraints.expand(width: 6),
+      decoration: BoxDecoration(
+        color: color ?? Theme.of(context).colorScheme.onSurface,
+        borderRadius: BorderRadius.circular(3),
+      ),
     );
   }
 
