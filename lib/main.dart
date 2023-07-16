@@ -372,7 +372,7 @@ class NormalLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: MediumBox("Text"),
+      child: OutlineMediumBox("Text"),
     );
   }
 }
@@ -556,7 +556,49 @@ class MediumBox extends StatelessWidget {
   }
 }
 
+class OutlineMediumBox extends StatelessWidget {
+  final String text;
+  final StatusBar? statusBar;
+  const OutlineMediumBox(this.text, {super.key, this.statusBar});
 
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.only(
+        left: 20,
+        right: 32,
+        top: 12,
+        bottom: 12,
+      ),
+      decoration: BoxDecoration(
+        border:
+            Border.all(width: 4, color: Theme.of(context).colorScheme.surface),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      constraints: const BoxConstraints.expand(
+        height: 80,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            color: Colors.amber,
+            height: 52,
+            width: 52,
+          ),
+          Text(
+            text,
+            style: Theme.of(context).primaryTextTheme.titleMedium?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+          ),
+          statusBar ?? const StatusBar()
+        ],
+      ),
+    );
+  }
+}
 
 /// Status Bar cover the parent height
 /// * StatusBar()
