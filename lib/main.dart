@@ -166,6 +166,8 @@ class MainApp extends StatelessWidget {
           // hintColor: hintColor,
           // hoverColor: hoverColor,
           // indicatorColor: indicatorColor,
+          ///
+          ///
           primaryColor: const Color(0xFFFCFBFC),
           // primaryColorDark: primaryColorDark,
           // primaryColorLight: primaryColorLight,
@@ -256,88 +258,168 @@ class MainApp extends StatelessWidget {
           // tooltipTheme: tooltipTheme,
         ),
         themeMode: ThemeMode.system,
-        home: const MyHomepage());
+        home: const LayoutBase());
   }
 }
 
-class MyHomepage extends StatefulWidget {
-  const MyHomepage({super.key});
+// class MyHomepage extends StatefulWidget {
+//   const MyHomepage({super.key});
 
-  @override
-  State<MyHomepage> createState() => _MyHomepageState();
-}
+//   @override
+//   State<MyHomepage> createState() => _MyHomepageState();
+// }
 
-class _MyHomepageState extends State<MyHomepage> {
+// class _MyHomepageState extends State<MyHomepage> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: Expanded(
+//           child: Column(
+//             crossAxisAlignment: CrossAxisAlignment.center,
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               Container(
+//                 height: 50,
+//                 width: 50,
+//                 color: Theme.of(context).primaryColor,
+//               ),
+//               Container(
+//                 height: 50,
+//                 width: 50,
+//                 color: Theme.of(context).colorScheme.onPrimary,
+//               ),
+//               Container(
+//                 height: 50,
+//                 width: 50,
+//                 color: Theme.of(context).colorScheme.secondary,
+//               ),
+//               Container(
+//                 height: 50,
+//                 width: 50,
+//                 color: Theme.of(context).colorScheme.tertiary,
+//               ),
+//               Container(
+//                 height: 50,
+//                 width: 50,
+//                 color: Theme.of(context).colorScheme.surface,
+//               ),
+//               Container(
+//                 height: 50,
+//                 width: 50,
+//                 color: Theme.of(context).colorScheme.surfaceTint,
+//               ),
+//               Container(
+//                 height: 50,
+//                 width: 50,
+//                 color: Theme.of(context).colorScheme.onSurface,
+//               ),
+//               Text(
+//                 "Title Medium",
+//                 style: Theme.of(context).primaryTextTheme.titleMedium,
+//               ),
+//               Text(
+//                 "Title Small",
+//                 style: Theme.of(context).primaryTextTheme.titleSmall,
+//               ),
+//               Text(
+//                 "Body Large",
+//                 style: Theme.of(context).primaryTextTheme.bodyLarge,
+//               ),
+//               Text(
+//                 "Body Medium",
+//                 style: Theme.of(context).primaryTextTheme.bodyMedium,
+//               ),
+//               Text(
+//                 "Body Small",
+//                 style: Theme.of(context).primaryTextTheme.bodySmall,
+//               ),
+//               Text(
+//                 "Label Large",
+//                 style: Theme.of(context).primaryTextTheme.labelLarge,
+//               ),
+//               Text(
+//                 "Label Medium",
+//                 style: Theme.of(context).primaryTextTheme.labelMedium,
+//               ),
+//               Text(
+//                 "Label Small",
+//                 style: Theme.of(context).primaryTextTheme.labelSmall,
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+class LayoutBase extends StatelessWidget {
+  const LayoutBase({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+      
+      body: LayoutBuilder(
+        builder: ((BuildContext context, BoxConstraints constraints) {
+      return const NormalLayout();
+    })));
+  }
+}
+
+class NormalLayout extends StatelessWidget {
+  const NormalLayout({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: SizedBox(
+        height: 104,
+        child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                height: 50,
-                width: 50,
-                color: Theme.of(context).primaryColor,
-              ),
-              Container(
-                height: 50,
-                width: 50,
-                color: Theme.of(context).colorScheme.onPrimary,
-              ),
-              Container(
-                height: 50,
-                width: 50,
-                color: Theme.of(context).colorScheme.surface,
-              ),
-              Container(
-                height: 50,
-                width: 50,
-                color: Theme.of(context).colorScheme.onSurface,
-              ),
-              Container(
-                height: 50,
-                width: 50,
-                color: Theme.of(context).colorScheme.surfaceVariant,
-              ),
-              Text(
-                "Title Medium",
-                style: Theme.of(context).primaryTextTheme.titleMedium,
-              ),
-              Text(
-                "Title Small",
-                style: Theme.of(context).primaryTextTheme.titleSmall,
-              ),
-              Text(
-                "Body Large",
-                style: Theme.of(context).primaryTextTheme.bodyLarge,
-              ),
-              Text(
-                "Body Medium",
-                style: Theme.of(context).primaryTextTheme.bodyMedium,
-              ),
-              Text(
-                "Body Small",
-                style: Theme.of(context).primaryTextTheme.bodySmall,
-              ),
-              Text(
-                "Label Large",
-                style: Theme.of(context).primaryTextTheme.labelLarge,
-              ),
-              Text(
-                "Label Medium",
-                style: Theme.of(context).primaryTextTheme.labelMedium,
-              ),
-              Text(
-                "Label Small",
-                style: Theme.of(context).primaryTextTheme.labelSmall,
-              ),
-            ],
-          ),
-        ),
+              const StatusBar(),
+              StatusBar.blue(),
+              StatusBar.green(),
+              StatusBar.none(),
+            ]),
       ),
     );
+  }
+}
+
+/// Status Bar cover the parent height
+/// * StatusBar()
+/// * StatusBar.blue()
+/// * StatusBar.green()
+/// * StatusBar.none()
+class StatusBar extends StatelessWidget {
+  final int width = 6;
+  final Color? color;
+  const StatusBar({super.key,this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: color ?? Theme.of(context).colorScheme.onSurface,
+      constraints: const BoxConstraints.expand(width: 6),
+    );
+  }
+
+  /// Secondary Color
+  factory StatusBar.blue() {
+    return const StatusBar(color: Color(0xFF0085FF));
+  }
+
+  /// Tertiary Color
+  factory StatusBar.green() {
+    return const StatusBar(color: Color(0xFF5EDC1F));
+  }
+
+  /// None (Tranparent)
+  factory StatusBar.none() {
+    return const StatusBar(color: Color(0x00000000));
   }
 }
