@@ -372,7 +372,20 @@ class NormalLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: OutlineMediumBox("Text"),
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            NormalBox("Text Here"),
+            NormalBoxWithImage("Text Here"),
+            OutlineBox("Text Here"),
+            MediumBox("Text Here"),
+            OutlineMediumBox("Text Here"),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -478,8 +491,8 @@ class OutlineBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(
-        left: 52,
-        right: 32,
+        left: 48,
+        right: 28,
         top: 12,
         bottom: 12,
       ),
@@ -565,8 +578,8 @@ class OutlineMediumBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(
-        left: 20,
-        right: 32,
+        left: 16,
+        right: 18,
         top: 12,
         bottom: 12,
       ),
