@@ -1,4 +1,7 @@
+import 'package:commu_app/status.dart';
 import 'package:flutter/material.dart';
+
+import 'boxs.dart';
 
 void main() {
   runApp(const MainApp());
@@ -58,11 +61,11 @@ class MainApp extends StatelessWidget {
             titleMedium: TextStyle(
                 fontSize: 24,
                 color: Color(0xFF050301),
-                fontWeight: FontWeight.w600),
+                fontWeight: FontWeight.w500),
             titleSmall: TextStyle(
                 fontSize: 20,
                 color: Color(0xFF050301),
-                fontWeight: FontWeight.w600),
+                fontWeight: FontWeight.w500),
             bodyLarge: TextStyle(
                 fontSize: 18,
                 color: Color(0xFF050301),
@@ -118,7 +121,38 @@ class MainApp extends StatelessWidget {
           // navigationBarTheme: navigationBarTheme,
           // navigationDrawerTheme: navigationDrawerTheme,
           // navigationRailTheme: navigationRailTheme,
-          // outlinedButtonTheme: outlinedButtonTheme,
+          outlinedButtonTheme: OutlinedButtonThemeData(
+              style: ButtonStyle(
+            // alignment: ,
+            // animationDuration: ,
+            // backgroundColor: ,
+            // elevation: ,
+            // enableFeedback: ,
+            // fixedSize: ,
+            // foregroundColor: ,
+            // iconColor: ,
+            // iconSize: ,
+            // maximumSize: ,
+            // minimumSize: ,
+            // mouseCursor: ,
+            // overlayColor: ,
+            padding: MaterialStateProperty.all(
+              const EdgeInsets.only(
+                left: 16,
+                right: 28,
+                top: 12,
+                bottom: 12,
+              ),
+            ),
+            // shadowColor: ,
+            // shape: ,
+            // side: ,
+            // splashFactory: ,
+            // surfaceTintColor: ,
+            // tapTargetSize: ,
+            // textStyle: ,
+            // visualDensity: ,
+          )),
           // popupMenuTheme: popupMenuTheme,
           // progressIndicatorTheme: progressIndicatorTheme,
           // radioTheme: radioTheme,
@@ -182,11 +216,11 @@ class MainApp extends StatelessWidget {
             titleMedium: TextStyle(
                 fontSize: 24,
                 color: Color(0xFFFCFBFC),
-                fontWeight: FontWeight.w600),
+                fontWeight: FontWeight.w500),
             titleSmall: TextStyle(
                 fontSize: 20,
                 color: Color(0xFFFCFBFC),
-                fontWeight: FontWeight.w600),
+                fontWeight: FontWeight.w500),
             bodyLarge: TextStyle(
                 fontSize: 18,
                 color: Color(0xFFFCFBFC),
@@ -242,7 +276,38 @@ class MainApp extends StatelessWidget {
           // navigationBarTheme: navigationBarTheme,
           // navigationDrawerTheme: navigationDrawerTheme,
           // navigationRailTheme: navigationRailTheme,
-          // outlinedButtonTheme: outlinedButtonTheme,
+          // outlinedButtonTheme: OutlinedButtonThemeData(
+          //     style: ButtonStyle(
+          //   // alignment: ,
+          //   // animationDuration: ,
+          //   // backgroundColor: ,
+          //   // elevation: ,
+          //   // enableFeedback: ,
+          //   // fixedSize: ,
+          //   // foregroundColor: ,
+          //   // iconColor: ,
+          //   iconSize: const MaterialStatePropertyAll(56.0),
+          //   // maximumSize: ,
+          //   minimumSize: const MaterialStatePropertyAll(Size(324.0, 80.0)),
+          //   // mouseCursor: ,
+          //   // overlayColor: ,
+          //   padding: const MaterialStatePropertyAll(EdgeInsets.zero),
+          //   // shadowColor: ,
+          //   shape: MaterialStatePropertyAll(
+          //     RoundedRectangleBorder(
+          //       borderRadius: BorderRadius.circular(20),
+          //     ),
+          //   ),
+          //   side: const MaterialStatePropertyAll(BorderSide(
+          //     width: 4,
+          //     color: Color(0xFF272727),
+          //   )),
+          //   // splashFactory: ,
+          //   // surfaceTintColor: ,
+          //   // tapTargetSize: ,
+          //   // textStyle: ,
+          //   // visualDensity: ,
+          // )),
           // popupMenuTheme: popupMenuTheme,
           // progressIndicatorTheme: progressIndicatorTheme,
           // radioTheme: radioTheme,
@@ -368,159 +433,19 @@ class LayoutBase extends StatelessWidget {
 
 class NormalLayout extends StatelessWidget {
   const NormalLayout({super.key});
-
+  // final VoidCallback? onPressed = false ? (){print()} : null;
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Center(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            NormalBox("Text Here"),
-            NormalBoxWithImage("Text Here"),
-            OutlineBox("Text Here"),
-            MediumBox("Text Here"),
-            OutlineMediumBox("Text Here"),
+           const OutlineMediumBox("hello")
           ],
         ),
-      ),
-    );
-  }
-}
-
-class NormalBox extends StatelessWidget {
-  final String text;
-  final StatusBar? statusBar;
-  const NormalBox(this.text, {super.key, this.statusBar});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(
-        left: 52,
-        right: 32,
-        top: 12,
-        bottom: 12,
-      ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(32),
-        color: Theme.of(context).colorScheme.surface,
-      ),
-      constraints: const BoxConstraints.expand(
-        height: 136,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            color: Colors.amber,
-            height: 52,
-            width: 52,
-          ),
-          Text(
-            text,
-            style: Theme.of(context).primaryTextTheme.titleMedium?.copyWith(
-                  color: Theme.of(context).colorScheme.onSurface,
-                ),
-          ),
-          statusBar ?? const StatusBar()
-        ],
-      ),
-    );
-  }
-}
-
-class NormalBoxWithImage extends StatelessWidget {
-  final String text;
-  final StatusBar? statusBar;
-  const NormalBoxWithImage(this.text, {super.key, this.statusBar});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(
-        left: 8,
-        right: 32,
-        top: 8,
-        bottom: 8,
-      ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(32),
-        color: Theme.of(context).colorScheme.surface,
-      ),
-      constraints: const BoxConstraints.expand(
-        height: 136,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.onPrimary,
-              borderRadius: BorderRadius.circular(32),
-            ),
-            height: 120,
-            width: 120,
-          ),
-          Text(
-            text,
-            style: Theme.of(context).primaryTextTheme.titleMedium?.copyWith(
-                  color: Theme.of(context).colorScheme.onSurface,
-                ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            child: statusBar ?? const StatusBar(),
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class OutlineBox extends StatelessWidget {
-  final String text;
-  final StatusBar? statusBar;
-  const OutlineBox(this.text, {super.key, this.statusBar});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(
-        left: 48,
-        right: 28,
-        top: 12,
-        bottom: 12,
-      ),
-      decoration: BoxDecoration(
-        border:
-            Border.all(width: 4, color: Theme.of(context).colorScheme.surface),
-        borderRadius: BorderRadius.circular(32),
-      ),
-      constraints: const BoxConstraints.expand(
-        height: 136,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            color: Colors.amber,
-            height: 52,
-            width: 52,
-          ),
-          Text(
-            text,
-            style: Theme.of(context).primaryTextTheme.titleMedium?.copyWith(
-                  color: Theme.of(context).colorScheme.onSurface,
-                ),
-          ),
-          statusBar ?? const StatusBar()
-        ],
       ),
     );
   }
@@ -569,83 +494,122 @@ class MediumBox extends StatelessWidget {
   }
 }
 
-class OutlineMediumBox extends StatelessWidget {
-  final String text;
-  final StatusBar? statusBar;
-  const OutlineMediumBox(this.text, {super.key, this.statusBar});
+// class OutlineMediumBoxs extends OutlinedButton {
+//   final String text;
+//   final StatusBar? statusBar;
+//   OutlineMediumBoxs(
+//     this.text, {
+//     super.key,
+//     this.statusBar,
+//     required super.onPressed,
+//     // required super.child,
+//   }) : super(
+//           child: ConstrainedBox(
+//             constraints: const BoxConstraints(maxHeight: 56,maxWidth: 272),
+//             child: Row(
+//               mainAxisSize: MainAxisSize.max,
+//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//               crossAxisAlignment: CrossAxisAlignment.center,
+//               children: [
+//                 Container(
+//                   color: Colors.amber,
+//                   height: 52,
+//                   width: 52,
+//                 ),
+//                 Text(text),
+//                 statusBar ?? const StatusBar()
+//               ],
+//             ),
+//           ),
+//         );
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(
-        left: 16,
-        right: 18,
-        top: 12,
-        bottom: 12,
-      ),
-      decoration: BoxDecoration(
-        border:
-            Border.all(width: 4, color: Theme.of(context).colorScheme.surface),
-        borderRadius: BorderRadius.circular(20),
-      ),
-      constraints: const BoxConstraints.expand(
-        height: 80,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            color: Colors.amber,
-            height: 52,
-            width: 52,
-          ),
-          Text(
-            text,
-            style: Theme.of(context).primaryTextTheme.titleMedium?.copyWith(
-                  color: Theme.of(context).colorScheme.onSurface,
-                ),
-          ),
-          statusBar ?? const StatusBar()
-        ],
-      ),
-    );
-  }
-}
+//   @override
+//   ButtonStyle defaultStyleOf(BuildContext context) {
+//     final ThemeData theme = Theme.of(context);
+//     final ColorScheme colorScheme = theme.colorScheme;
+//     return OutlinedButton.styleFrom(
+//       alignment: Alignment.center,
+//       animationDuration: kThemeChangeDuration,
+//       backgroundColor: Colors.transparent,
+//       disabledForegroundColor: colorScheme.onSurface.withOpacity(0.38),
+//       disabledBackgroundColor: Colors.transparent,
+//       disabledMouseCursor: SystemMouseCursors.basic,
+//       elevation: 0,
+//       enabledMouseCursor: SystemMouseCursors.click,
+//       // enableFeedback: ,
+//       // fixedSize: ,
+//       // foregroundColor: ,
+//       maximumSize: Size.infinite,
+//       minimumSize: const Size(324.0, 80.0),
+//       // mouseCursor: ,
+//       // overlayColor: ,
+//       padding: const EdgeInsets.only(
+//         left: 16,
+//         right: 28,
+//         top: 12,
+//         bottom: 12,
+//       ),
+//       shadowColor: theme.shadowColor,
+//       shape: RoundedRectangleBorder(
+//         borderRadius: BorderRadius.circular(20),
+//       ),
 
-/// Status Bar cover the parent height
-/// * StatusBar()
-/// * StatusBar.blue()
-/// * StatusBar.green()
-/// * StatusBar.none()
-class StatusBar extends StatelessWidget {
-  final int width = 6;
-  final Color? color;
-  const StatusBar({super.key, this.color});
+//       side: BorderSide(
+//         width: 4,
+//         color: colorScheme.onSurface,
+//       ),
+//       splashFactory: InkRipple.splashFactory,
+//       // surfaceTintColor: ,
+//       tapTargetSize: theme.materialTapTargetSize,
+//       textStyle: theme.primaryTextTheme.titleMedium,
+//       visualDensity: theme.visualDensity,
+//     );
+//   }
+// }
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      constraints: const BoxConstraints.expand(width: 6),
-      decoration: BoxDecoration(
-        color: color ?? Theme.of(context).colorScheme.surfaceTint,
-        borderRadius: BorderRadius.circular(3),
-      ),
-    );
-  }
+// class _OutlineMediumBox extends StatelessWidget {
+//    final String text;
+//   final StatusBar? statusBar;
+//   const _OutlineMediumBox({this.statusBar});
 
-  /// Secondary Color
-  factory StatusBar.blue() {
-    return const StatusBar(color: Color(0xFF0085FF));
-  }
+//   @override
+//   Widget build(BuildContext context) {
+//     return  Row(
+//             mainAxisSize: MainAxisSize.max,
+//             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//             crossAxisAlignment: CrossAxisAlignment.center,
+//             children: [
+//               Container(
+//                 color: Colors.amber,
+//                 height: 52,
+//                 width: 52,
+//               ),
+//               Text(text),
+//               statusBar ?? const StatusBar()
+//             ],
+//           );
+//   }
+// }
 
-  /// Tertiary Color
-  factory StatusBar.green() {
-    return const StatusBar(color: Color(0xFF5EDC1F));
-  }
-
-  /// None (Tranparent)
-  factory StatusBar.none() {
-    return const StatusBar(color: Color(0x00000000));
-  }
-}
+// foregroundColor: colorScheme.primary,
+//           disabledForegroundColor: colorScheme.onSurface.withOpacity(0.38),
+//           backgroundColor: Colors.transparent,
+//           disabledBackgroundColor: Colors.transparent,
+//           shadowColor: theme.shadowColor,
+//           elevation: 0,
+//           textStyle: theme.textTheme.labelLarge,
+//           padding: _scaledPadding(context),
+//           minimumSize: const Size(64, 36),
+//           maximumSize: Size.infinite,
+//           side: BorderSide(
+//             color: Theme.of(context).colorScheme.onSurface.withOpacity(0.12),
+//           ),
+//           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4))),
+//           enabledMouseCursor: SystemMouseCursors.click,
+//           disabledMouseCursor: SystemMouseCursors.basic,
+//           visualDensity: theme.visualDensity,
+//           tapTargetSize: theme.materialTapTargetSize,
+//           animationDuration: kThemeChangeDuration,
+//           enableFeedback: true,
+//           alignment: Alignment.center,
+//           splashFactory: InkRipple.splashFactory,
