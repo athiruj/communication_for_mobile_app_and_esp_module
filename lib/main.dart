@@ -442,8 +442,9 @@ class NormalLayout extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-           const OutlineMediumBox("hello")
+          children: const [
+            MediumBox("sdsdsd"),
+            TextFieldBox(label: "Hello")
           ],
         ),
       ),
@@ -451,48 +452,39 @@ class NormalLayout extends StatelessWidget {
   }
 }
 
-class MediumBox extends StatelessWidget {
-  final String text;
-  final StatusBar? statusBar;
-  const MediumBox(this.text, {super.key, this.statusBar});
+class TextFieldBox extends StatelessWidget {
+  final String label;
+  const TextFieldBox({super.key,required this.label});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(
-        left: 20,
-        right: 32,
-        top: 12,
-        bottom: 12,
-      ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        color: Theme.of(context).colorScheme.surface,
-      ),
-      constraints: const BoxConstraints.expand(
-        height: 80,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            color: Colors.amber,
-            height: 52,
-            width: 52,
-          ),
-          Text(
-            text,
-            style: Theme.of(context).primaryTextTheme.titleMedium?.copyWith(
-                  color: Theme.of(context).colorScheme.onSurface,
-                ),
-          ),
-          statusBar ?? const StatusBar()
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Text(
+          label,
+          style: Theme.of(context)
+              .primaryTextTheme
+              .bodyLarge
+              ?.copyWith(fontWeight: FontWeight.w400),
+        ),
+        const SizedBox(
+          height: 4,
+        ),
+        Container(
+          constraints: const BoxConstraints.expand(height: 56),
+              color: Theme.of(context).colorScheme.onSurface,
+          child: Text("Textfield",style: Theme.of(context)
+              .primaryTextTheme
+              .titleSmall
+              ?.copyWith(fontWeight: FontWeight.w400),),
+        )
+      ],
     );
   }
 }
+
 
 // class OutlineMediumBoxs extends OutlinedButton {
 //   final String text;

@@ -137,48 +137,48 @@ class OutlineBox extends StatelessWidget {
   }
 }
 
-// class MediumBox extends StatelessWidget {
-//   final String text;
-//   final StatusBar? statusBar;
-//   const MediumBox(this.text, {super.key, this.statusBar});
+class MediumBox extends StatelessWidget {
+  final String text;
+  final StatusBar? statusBar;
+  const MediumBox(this.text, {super.key, this.statusBar});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       padding: const EdgeInsets.only(
-//         left: 20,
-//         right: 32,
-//         top: 12,
-//         bottom: 12,
-//       ),
-//       decoration: BoxDecoration(
-//         borderRadius: BorderRadius.circular(20),
-//         color: Theme.of(context).colorScheme.surface,
-//       ),
-//       constraints: const BoxConstraints.expand(
-//         height: 80,
-//       ),
-//       child: Row(
-//         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//         crossAxisAlignment: CrossAxisAlignment.center,
-//         children: [
-//           Container(
-//             color: Colors.amber,
-//             height: 52,
-//             width: 52,
-//           ),
-//           Text(
-//             text,
-//             style: Theme.of(context).primaryTextTheme.titleMedium?.copyWith(
-//                   color: Theme.of(context).colorScheme.onSurface,
-//                 ),
-//           ),
-//           statusBar ?? const StatusBar()
-//         ],
-//       ),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.only(
+        left: 20,
+        right: 32,
+        top: 12,
+        bottom: 12,
+      ),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Theme.of(context).colorScheme.surface,
+      ),
+      constraints: const BoxConstraints.expand(
+        height: 80,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            color: Colors.amber,
+            height: 52,
+            width: 52,
+          ),
+          Text(
+            text,
+            style: Theme.of(context).primaryTextTheme.titleMedium?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+          ),
+          statusBar ?? const StatusBar()
+        ],
+      ),
+    );
+  }
+}
 
 class OutlineMediumBox extends StatelessWidget {
   final String text;
