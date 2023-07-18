@@ -8,7 +8,9 @@ void main() {
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  const MainApp({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -331,7 +333,7 @@ class MainApp extends StatelessWidget {
 }
 
 // class MyHomepage extends StatefulWidget {
-//   const MyHomepage({super.key});
+//   const MyHomepage({super.key,});
 
 //   @override
 //   State<MyHomepage> createState() => _MyHomepageState();
@@ -423,7 +425,9 @@ class MainApp extends StatelessWidget {
 // }
 
 class LayoutBase extends StatelessWidget {
-  const LayoutBase({super.key});
+  const LayoutBase({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -435,25 +439,23 @@ class LayoutBase extends StatelessWidget {
 }
 
 class NormalLayout extends StatelessWidget {
-  const NormalLayout({super.key});
+  const NormalLayout({
+    super.key,
+  });
   // final VoidCallback? onPressed = false ? (){print()} : null;
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 16.0,
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: const [
-            // NormalBox("sdsdsd"),
-            // SizedBox(
-            //   height: 8,
-            // ),
-            // TextFieldBox(
-            //   textfieldLabel: "Password",
-            // ),
-            NormalBoxWithTextfield("Text Here")
+            NormalBox("Text Here"),
+            NormalBoxWithTextfield("Text Here"),
           ],
         ),
       ),
@@ -464,10 +466,16 @@ class NormalLayout extends StatelessWidget {
 class NormalBoxWithTextfield extends StatelessWidget {
   final String text;
   final StatusBar? statusBar;
-  const NormalBoxWithTextfield(this.text, {super.key, this.statusBar});
+  const NormalBoxWithTextfield(
+    this.text, {
+    super.key,
+    this.statusBar,
+  });
 
   @override
   Widget build(BuildContext context) {
+    TextTheme textTheme = Theme.of(context).primaryTextTheme;
+    ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Container(
       padding: const EdgeInsets.only(
         left: 20,
@@ -475,222 +483,134 @@ class NormalBoxWithTextfield extends StatelessWidget {
         top: 16,
         bottom: 16,
       ),
-      height: 305,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(32),
         color: Theme.of(context).colorScheme.surface,
       ),
-      child:  Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Expanded(
-            child: Column(
-              children: [
-                Container(
-                  height: 104,
-                  color: Colors.green,
-                  padding: const EdgeInsets.only(
-                    left: 32.0
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        color: Colors.amber,
-                        height: 52,
-                        width: 52,
+      child: IntrinsicHeight(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Flexible(
+              child: IntrinsicWidth(
+                stepWidth: double.infinity,
+                child: Column(
+                  children: [
+                    Container(
+                      height: 104,
+                      padding: const EdgeInsets.only(
+                        left: 32.0,
                       ),
-                      const SizedBox(
-            width: 20.0,
-          ),
-                      Expanded(
-                        
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            text,
-                            style:
-                                Theme.of(context).primaryTextTheme.titleMedium?.copyWith(
-                                      color: Theme.of(context).colorScheme.onSurface,
+                      child: Row(
+                        children: [
+                          Container(
+                            color: Colors.amber,
+                            height: 52,
+                            width: 52,
+                          ),
+                          const SizedBox(
+                            width: 20.0,
+                          ),
+                          Flexible(
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                text,
+                                style: Theme.of(context)
+                                    .primaryTextTheme
+                                    .titleMedium
+                                    ?.copyWith(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSurface,
                                     ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 12.0,
+                    ),
+                    TextField(
+                      // controller: textEditingController,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        disabledBorder: InputBorder.none,
+                        contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 20.0,
+                          vertical: 16.0,
+                        ),
+                        filled: true,
+                        fillColor: colorScheme.onPrimary,
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(
+                            color: colorScheme.onSurface,
+                            width: 2.0,
                           ),
                         ),
+                        errorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(
+                            color: colorScheme.error,
+                            width: 2.0,
+                          ),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(
+                            color: colorScheme.error,
+                            width: 2.0,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(
+                            color: colorScheme.surface,
+                            width: 0.0,
+                          ),
+                        ),
+                        // errorText: "error",
+                        errorStyle: textTheme.labelSmall?.copyWith(
+                          color: colorScheme.error,
+                        ),
+                        // constraints: const BoxConstraints(
+                        //   minHeight: 89.0,
+                        // ),
+                        labelText: "Password",
+                        labelStyle: textTheme.labelLarge,
+                        floatingLabelStyle: textTheme.bodyLarge,
                       ),
-                    ],
-                  ),
+                      style: textTheme.titleSmall?.copyWith(
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Container(
+                      height: 56,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        // color: Theme.of(context).colorScheme.primary,
+                      ),
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Button Here",
+                        style: textTheme.titleSmall,
+                      ),
+                    )
+                  ],
                 ),
-                Expanded(
-                  child: TextFieldBox(textfieldLabel: "dsda",)
-                )
-              ],
+              ),
             ),
-          ),
-          const SizedBox(
-            width: 20.0,
-          ),
-          statusBar ?? const StatusBar()
-        ],
-      ),
-    );
-  }
-}
-
-class TextFieldBox extends StatelessWidget {
-  // final String textfieldTitle;
-  final String textfieldLabel;
-  final TextEditingController? textEditingController;
-  const TextFieldBox(
-      {super.key,
-      required this.textfieldLabel,
-      // required this.textfieldTitle,
-      this.textEditingController});
-
-  @override
-  Widget build(BuildContext context) {
-    TextTheme textTheme = Theme.of(context).primaryTextTheme;
-    ColorScheme colorScheme = Theme.of(context).colorScheme;
-
-    return TextField(
-      controller: textEditingController,
-      decoration: InputDecoration(
-        disabledBorder: InputBorder.none,
-        contentPadding:
-            const EdgeInsets.symmetric(horizontal: 20, vertical: 16.0),
-        border: OutlineInputBorder(
-          // borderRadius: BorderRadius.circular(32),
-          borderSide: BorderSide(color: colorScheme.error, width: 2.0),
-
+            const SizedBox(
+              width: 20.0,
+            ),
+            statusBar ?? const StatusBar()
+          ],
         ),
-        // errorText: "error",
-        errorStyle: textTheme.labelSmall?.copyWith(color: colorScheme.error),
-        constraints: const BoxConstraints(minHeight: 89.0, minWidth: 320),
-        labelText: textfieldLabel,
-        labelStyle: textTheme.labelLarge,
       ),
-      style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w400),
     );
   }
 }
-
-
-// class OutlineMediumBoxs extends OutlinedButton {
-//   final String text;
-//   final StatusBar? statusBar;
-//   OutlineMediumBoxs(
-//     this.text, {
-//     super.key,
-//     this.statusBar,
-//     required super.onPressed,
-//     // required super.child,
-//   }) : super(
-//           child: ConstrainedBox(
-//             constraints: const BoxConstraints(maxHeight: 56,maxWidth: 272),
-//             child: Row(
-//               mainAxisSize: MainAxisSize.max,
-//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//               crossAxisAlignment: CrossAxisAlignment.center,
-//               children: [
-//                 Container(
-//                   color: Colors.amber,
-//                   height: 52,
-//                   width: 52,
-//                 ),
-//                 Text(text),
-//                 statusBar ?? const StatusBar()
-//               ],
-//             ),
-//           ),
-//         );
-
-//   @override
-//   ButtonStyle defaultStyleOf(BuildContext context) {
-//     final ThemeData theme = Theme.of(context);
-//     final ColorScheme colorScheme = theme.colorScheme;
-//     return OutlinedButton.styleFrom(
-//       alignment: Alignment.center,
-//       animationDuration: kThemeChangeDuration,
-//       backgroundColor: Colors.transparent,
-//       disabledForegroundColor: colorScheme.onSurface.withOpacity(0.38),
-//       disabledBackgroundColor: Colors.transparent,
-//       disabledMouseCursor: SystemMouseCursors.basic,
-//       elevation: 0,
-//       enabledMouseCursor: SystemMouseCursors.click,
-//       // enableFeedback: ,
-//       // fixedSize: ,
-//       // foregroundColor: ,
-//       maximumSize: Size.infinite,
-//       minimumSize: const Size(324.0, 80.0),
-//       // mouseCursor: ,
-//       // overlayColor: ,
-//       padding: const EdgeInsets.only(
-//         left: 16,
-//         right: 28,
-//         top: 12,
-//         bottom: 12,
-//       ),
-//       shadowColor: theme.shadowColor,
-//       shape: RoundedRectangleBorder(
-//         borderRadius: BorderRadius.circular(20),
-//       ),
-
-//       side: BorderSide(
-//         width: 4,
-//         color: colorScheme.onSurface,
-//       ),
-//       splashFactory: InkRipple.splashFactory,
-//       // surfaceTintColor: ,
-//       tapTargetSize: theme.materialTapTargetSize,
-//       textStyle: theme.primaryTextTheme.titleMedium,
-//       visualDensity: theme.visualDensity,
-//     );
-//   }
-// }
-
-// class _OutlineMediumBox extends StatelessWidget {
-//    final String text;
-//   final StatusBar? statusBar;
-//   const _OutlineMediumBox({this.statusBar});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return  Row(
-//             mainAxisSize: MainAxisSize.max,
-//             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//             crossAxisAlignment: CrossAxisAlignment.center,
-//             children: [
-//               Container(
-//                 color: Colors.amber,
-//                 height: 52,
-//                 width: 52,
-//               ),
-//               Text(text),
-//               statusBar ?? const StatusBar()
-//             ],
-//           );
-//   }
-// }
-
-// foregroundColor: colorScheme.primary,
-//           disabledForegroundColor: colorScheme.onSurface.withOpacity(0.38),
-//           backgroundColor: Colors.transparent,
-//           disabledBackgroundColor: Colors.transparent,
-//           shadowColor: theme.shadowColor,
-//           elevation: 0,
-//           textStyle: theme.textTheme.labelLarge,
-//           padding: _scaledPadding(context),
-//           minimumSize: const Size(64, 36),
-//           maximumSize: Size.infinite,
-//           side: BorderSide(
-//             color: Theme.of(context).colorScheme.onSurface.withOpacity(0.12),
-//           ),
-//           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4))),
-//           enabledMouseCursor: SystemMouseCursors.click,
-//           disabledMouseCursor: SystemMouseCursors.basic,
-//           visualDensity: theme.visualDensity,
-//           tapTargetSize: theme.materialTapTargetSize,
-//           animationDuration: kThemeChangeDuration,
-//           enableFeedback: true,
-//           alignment: Alignment.center,
-//           splashFactory: InkRipple.splashFactory,
