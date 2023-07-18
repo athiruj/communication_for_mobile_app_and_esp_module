@@ -38,6 +38,7 @@ class MainApp extends StatelessWidget {
             surface: Color(0xFFECECEC),
             surfaceTint: Color(0xFFD1D0D0),
             onSurface: Color(0xFFB6B5B4),
+            error: Color(0xFFC51010),
           ),
           // dialogBackgroundColor: dialogBackgroundColor,
           // disabledColor: disabledColor,
@@ -182,16 +183,18 @@ class MainApp extends StatelessWidget {
           // visualDensity: visualDensity,
           // canvasColor: canvasColor,
           // cardColor: cardColor,
-          colorScheme: const ColorScheme.light(
-              primary: Color(0xFFFCFBFC),
-              onPrimary: Color(0xFF050301),
-              secondary: Color(0xFF0085FF),
-              onSecondary: Color(0xFFA0D2FF),
-              tertiary: Color(0xFF5EDC1F),
-              onTertiary: Color(0xFFDBFFC9),
-              surface: Color(0xFF272727),
-              surfaceTint: Color(0xFF636262),
-              onSurface: Color(0xFF9F9E9D)),
+          colorScheme: const ColorScheme.dark(
+            primary: Color(0xFFFCFBFC),
+            onPrimary: Color(0xFF050301),
+            secondary: Color(0xFF0085FF),
+            onSecondary: Color(0xFFA0D2FF),
+            tertiary: Color(0xFF5EDC1F),
+            onTertiary: Color(0xFFDBFFC9),
+            surface: Color(0xFF272727),
+            surfaceTint: Color(0xFF636262),
+            onSurface: Color(0xFF9F9E9D),
+            error: Color(0xFFC51010),
+          ),
           // dialogBackgroundColor: dialogBackgroundColor,
           // disabledColor: disabledColor,
           // dividerColor: dividerColor,
@@ -443,8 +446,14 @@ class NormalLayout extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: const [
-            MediumBox("sdsdsd"),
-            TextFieldBox(label: "Hello")
+            // NormalBox("sdsdsd"),
+            // SizedBox(
+            //   height: 8,
+            // ),
+            // TextFieldBox(
+            //   textfieldLabel: "Password",
+            // ),
+            NormalBoxWithTextfield("Text Here")
           ],
         ),
       ),
@@ -452,35 +461,115 @@ class NormalLayout extends StatelessWidget {
   }
 }
 
-class TextFieldBox extends StatelessWidget {
-  final String label;
-  const TextFieldBox({super.key,required this.label});
+class NormalBoxWithTextfield extends StatelessWidget {
+  final String text;
+  final StatusBar? statusBar;
+  const NormalBoxWithTextfield(this.text, {super.key, this.statusBar});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(
-          label,
-          style: Theme.of(context)
-              .primaryTextTheme
-              .bodyLarge
-              ?.copyWith(fontWeight: FontWeight.w400),
+    return Container(
+      padding: const EdgeInsets.only(
+        left: 20,
+        right: 32,
+        top: 16,
+        bottom: 16,
+      ),
+      height: 305,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(32),
+        color: Theme.of(context).colorScheme.surface,
+      ),
+      child:  Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Expanded(
+            child: Column(
+              children: [
+                Container(
+                  height: 104,
+                  color: Colors.green,
+                  padding: const EdgeInsets.only(
+                    left: 32.0
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        color: Colors.amber,
+                        height: 52,
+                        width: 52,
+                      ),
+                      const SizedBox(
+            width: 20.0,
+          ),
+                      Expanded(
+                        
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            text,
+                            style:
+                                Theme.of(context).primaryTextTheme.titleMedium?.copyWith(
+                                      color: Theme.of(context).colorScheme.onSurface,
+                                    ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: TextFieldBox(textfieldLabel: "dsda",)
+                )
+              ],
+            ),
+          ),
+          const SizedBox(
+            width: 20.0,
+          ),
+          statusBar ?? const StatusBar()
+        ],
+      ),
+    );
+  }
+}
+
+class TextFieldBox extends StatelessWidget {
+  // final String textfieldTitle;
+  final String textfieldLabel;
+  final TextEditingController? textEditingController;
+  const TextFieldBox(
+      {super.key,
+      required this.textfieldLabel,
+      // required this.textfieldTitle,
+      this.textEditingController});
+
+  @override
+  Widget build(BuildContext context) {
+    TextTheme textTheme = Theme.of(context).primaryTextTheme;
+    ColorScheme colorScheme = Theme.of(context).colorScheme;
+
+    return TextField(
+      controller: textEditingController,
+      decoration: InputDecoration(
+        disabledBorder: InputBorder.none,
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 20, vertical: 16.0),
+        border: OutlineInputBorder(
+          // borderRadius: BorderRadius.circular(32),
+          borderSide: BorderSide(color: colorScheme.error, width: 2.0),
+
         ),
-        const SizedBox(
-          height: 4,
-        ),
-        Container(
-          constraints: const BoxConstraints.expand(height: 56),
-              color: Theme.of(context).colorScheme.onSurface,
-          child: Text("Textfield",style: Theme.of(context)
-              .primaryTextTheme
-              .titleSmall
-              ?.copyWith(fontWeight: FontWeight.w400),),
-        )
-      ],
+        // errorText: "error",
+        errorStyle: textTheme.labelSmall?.copyWith(color: colorScheme.error),
+        constraints: const BoxConstraints(minHeight: 89.0, minWidth: 320),
+        labelText: textfieldLabel,
+        labelStyle: textTheme.labelLarge,
+      ),
+      style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w400),
     );
   }
 }
