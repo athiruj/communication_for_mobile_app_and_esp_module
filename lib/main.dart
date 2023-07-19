@@ -1,5 +1,9 @@
+import 'dart:ui';
+
 import 'package:commu_app/status.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/services/text_formatter.dart';
+import 'package:flutter/src/gestures/recognizer.dart';
 
 import 'boxs.dart';
 
@@ -104,9 +108,9 @@ class MainApp extends StatelessWidget {
               // floatingLabelBehavior: floatingLabelBehavior,
               floatingLabelStyle: const TextStyle(
                 // * colorScheme primary
-                color: Color(0xFF050301),
+                color: Color(0xFFB6B5B4),
                 fontSize: 18,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
               ),
               // focusColor: focusColor,
               focusedBorder: OutlineInputBorder(
@@ -315,9 +319,9 @@ class MainApp extends StatelessWidget {
             // floatingLabelBehavior: floatingLabelBehavior,
             floatingLabelStyle: const TextStyle(
               // * colorScheme primary
-              color: Color(0xFFFCFBFC),
+              color: Color(0xFF9F9E9D),
               fontSize: 18,
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w600,
             ),
             // focusColor: focusColor,
             focusedBorder: OutlineInputBorder(
@@ -462,121 +466,23 @@ class NormalLayout extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return SizedBox.expand(
       child: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 16.0,
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        child: ListView(
+          // mainAxisAlignment: MainAxisAlignment.center,
+          // crossAxisAlignment: CrossAxisAlignment.center,
+          
           children: const [
-            NormalBox("Text Here"),
-            NormalBoxWithTextfield("Text Here"),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class NormalBoxWithTextfield extends StatelessWidget {
-  final String text;
-  final StatusBar? statusBar;
-  const NormalBoxWithTextfield(
-    this.text, {
-    super.key,
-    this.statusBar,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    TextTheme textTheme = Theme.of(context).primaryTextTheme;
-    ColorScheme colorScheme = Theme.of(context).colorScheme;
-    return Container(
-      padding: const EdgeInsets.only(
-        left: 20,
-        right: 32,
-        top: 16,
-        bottom: 16,
-      ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(32),
-        color: colorScheme.surface,
-      ),
-      child: IntrinsicHeight(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Flexible(
-              child: IntrinsicWidth(
-                stepWidth: double.infinity,
-                child: Column(
-                  children: [
-                    Container(
-                      height: 104,
-                      padding: const EdgeInsets.only(
-                        left: 32.0,
-                      ),
-                      child: Row(
-                        children: [
-                          Container(
-                            color: Colors.amber,
-                            height: 52,
-                            width: 52,
-                          ),
-                          const SizedBox(
-                            width: 20.0,
-                          ),
-                          Flexible(
-                            child: Align(
-                              alignment: Alignment.center,
-                              child: Text(
-                                text,
-                                style: textTheme.titleMedium?.copyWith(
-                                  color: colorScheme.onSurface,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 12.0,
-                    ),
-                    TextField(
-                      // controller: textEditingController,
-                      obscureText: true,
-                      decoration: const InputDecoration(
-                        helperText: "hello",
-                        labelText: "Password",
-                      ),
-                      style: textTheme.titleSmall?.copyWith(
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    Container(
-                      height: 56,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        // color: Theme.of(context).colorScheme.primary,
-                      ),
-                      alignment: Alignment.center,
-                      child: Text(
-                        "Button Here",
-                        style: textTheme.titleSmall,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(
-              width: 20.0,
-            ),
-            statusBar ?? const StatusBar()
+            NormalBox(),
+            MediumBox(),
+            OutlineBox(),
+            OutlineMediumBox(),
+            NormalBoxWithImage(),
+            NormalBoxWithTextfield(),
+            OutlineBoxWithTextfield()
           ],
         ),
       ),
