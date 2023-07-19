@@ -369,12 +369,13 @@ class NormalBoxWithTextfield extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    Container(
-                      height: 56,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      alignment: Alignment.center,
+                    FilledButton(
+                      onPressed: (){},
+                      // height: 56,
+                      // decoration: BoxDecoration(
+                      //   borderRadius: BorderRadius.circular(12),
+                      // ),
+                      // alignment: Alignment.center,
                       child: Text(
                         "Button Here",
                         style: textTheme.titleSmall,
@@ -480,12 +481,8 @@ class OutlineBoxWithTextfield extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
           ),
-          Container(
-            height: 56,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-            ),
-            alignment: Alignment.center,
+          FilledButton(
+            onPressed: (){},
             child: Text(
               "Button Here",
               style: textTheme.titleSmall,
