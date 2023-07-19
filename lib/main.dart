@@ -124,38 +124,7 @@ class MainApp extends StatelessWidget {
           // navigationBarTheme: navigationBarTheme,
           // navigationDrawerTheme: navigationDrawerTheme,
           // navigationRailTheme: navigationRailTheme,
-          outlinedButtonTheme: OutlinedButtonThemeData(
-              style: ButtonStyle(
-            // alignment: ,
-            // animationDuration: ,
-            // backgroundColor: ,
-            // elevation: ,
-            // enableFeedback: ,
-            // fixedSize: ,
-            // foregroundColor: ,
-            // iconColor: ,
-            // iconSize: ,
-            // maximumSize: ,
-            // minimumSize: ,
-            // mouseCursor: ,
-            // overlayColor: ,
-            padding: MaterialStateProperty.all(
-              const EdgeInsets.only(
-                left: 16,
-                right: 28,
-                top: 12,
-                bottom: 12,
-              ),
-            ),
-            // shadowColor: ,
-            // shape: ,
-            // side: ,
-            // splashFactory: ,
-            // surfaceTintColor: ,
-            // tapTargetSize: ,
-            // textStyle: ,
-            // visualDensity: ,
-          )),
+          // outlinedButtonTheme: outlinedButtonThemeData,
           // popupMenuTheme: popupMenuTheme,
           // progressIndicatorTheme: progressIndicatorTheme,
           // radioTheme: radioTheme,
@@ -175,7 +144,78 @@ class MainApp extends StatelessWidget {
           // applyElevationOverlayColor: applyElevationOverlayColor,
           // cupertinoOverrideTheme: cupertinoOverrideTheme,
           // extensions: extensions,
-          // inputDecorationTheme: inputDecorationTheme,
+          inputDecorationTheme: InputDecorationTheme(
+            // activeIndicatorBorder: ,
+            // alignLabelWithHint: ,
+            // border: ,
+            // constraints: ,
+            contentPadding: const EdgeInsets.symmetric(
+              horizontal: 20.0,
+              vertical: 16.0,
+            ),
+            // counterStyle: ,
+            disabledBorder: InputBorder.none,
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(
+                color: Color(0xFF272727),
+                width: 0.0,
+              ),
+            ),
+            errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(
+                color: Color(0xFFC51010),
+                width: 2.0,
+              ),
+            ),
+            // errorMaxLines: ,
+            errorStyle: const TextStyle(
+                fontSize: 14,
+                color: Color(0xFFC51010),
+                fontWeight: FontWeight.w400),
+
+            // floatingLabelAlignment: ,
+            // floatingLabelBehavior: ,
+            floatingLabelStyle: const TextStyle(
+                fontSize: 18,
+                color: Color(0xFFFCFBFC),
+                fontWeight: FontWeight.w500),
+            filled: true,
+            fillColor: const Color(0xFF050301),
+            // focusColor: ,
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(
+                color: Color(0xFF9F9E9D),
+                width: 2.0,
+              ),
+            ),
+            focusedErrorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(
+                color: Color(0xFFC51010),
+                width: 2.0,
+              ),
+            ),
+            // helperMaxLines: ,
+            // helperStyle: ,
+            // hintStyle: ,
+            // hoverColor: ,
+            // iconColor: ,
+            // isCollapsed: ,
+            // isDense: ,
+            labelStyle: const TextStyle(
+              fontSize: 18,
+              color: Color(0xFF9F9E9D),
+              fontWeight: FontWeight.w400,
+            ),
+            // outlineBorder: ,
+            // prefixIconColor: ,
+            // prefixStyle: ,
+            // suffixIconColor: ,
+            // suffixStyle: ,
+          ),
           // materialTapTargetSize: materialTapTargetSize,
           // pageTransitionsTheme: pageTransitionsTheme,
           // platform: platform,
@@ -219,37 +259,45 @@ class MainApp extends StatelessWidget {
           // primaryIconTheme: primaryIconTheme,
           primaryTextTheme: const TextTheme(
             titleMedium: TextStyle(
-                fontSize: 24,
-                color: Color(0xFFFCFBFC),
-                fontWeight: FontWeight.w500),
+              fontSize: 24,
+              color: Color(0xFFFCFBFC),
+              fontWeight: FontWeight.w500,
+            ),
             titleSmall: TextStyle(
-                fontSize: 20,
-                color: Color(0xFFFCFBFC),
-                fontWeight: FontWeight.w500),
+              fontSize: 20,
+              color: Color(0xFFFCFBFC),
+              fontWeight: FontWeight.w500,
+            ),
             bodyLarge: TextStyle(
-                fontSize: 18,
-                color: Color(0xFFFCFBFC),
-                fontWeight: FontWeight.w500),
+              fontSize: 18,
+              color: Color(0xFFFCFBFC),
+              fontWeight: FontWeight.w500,
+            ),
             bodyMedium: TextStyle(
-                fontSize: 16,
-                color: Color(0xFFFCFBFC),
-                fontWeight: FontWeight.w500),
+              fontSize: 16,
+              color: Color(0xFFFCFBFC),
+              fontWeight: FontWeight.w500,
+            ),
             bodySmall: TextStyle(
-                fontSize: 14,
-                color: Color(0xFFFCFBFC),
-                fontWeight: FontWeight.w500),
+              fontSize: 14,
+              color: Color(0xFFFCFBFC),
+              fontWeight: FontWeight.w500,
+            ),
             labelLarge: TextStyle(
-                fontSize: 18,
-                color: Color(0xFF9F9E9D),
-                fontWeight: FontWeight.w400),
+              fontSize: 18,
+              color: Color(0xFF9F9E9D),
+              fontWeight: FontWeight.w400,
+            ),
             labelMedium: TextStyle(
-                fontSize: 16,
-                color: Color(0xFF9F9E9D),
-                fontWeight: FontWeight.w400),
+              fontSize: 16,
+              color: Color(0xFF9F9E9D),
+              fontWeight: FontWeight.w400,
+            ),
             labelSmall: TextStyle(
-                fontSize: 14,
-                color: Color(0xFF9F9E9D),
-                fontWeight: FontWeight.w400),
+              fontSize: 14,
+              color: Color(0xFF9F9E9D),
+              fontWeight: FontWeight.w400,
+            ),
           ),
           // textTheme: TextTheme(),
           // typography: typography,
@@ -281,38 +329,7 @@ class MainApp extends StatelessWidget {
           // navigationBarTheme: navigationBarTheme,
           // navigationDrawerTheme: navigationDrawerTheme,
           // navigationRailTheme: navigationRailTheme,
-          // outlinedButtonTheme: OutlinedButtonThemeData(
-          //     style: ButtonStyle(
-          //   // alignment: ,
-          //   // animationDuration: ,
-          //   // backgroundColor: ,
-          //   // elevation: ,
-          //   // enableFeedback: ,
-          //   // fixedSize: ,
-          //   // foregroundColor: ,
-          //   // iconColor: ,
-          //   iconSize: const MaterialStatePropertyAll(56.0),
-          //   // maximumSize: ,
-          //   minimumSize: const MaterialStatePropertyAll(Size(324.0, 80.0)),
-          //   // mouseCursor: ,
-          //   // overlayColor: ,
-          //   padding: const MaterialStatePropertyAll(EdgeInsets.zero),
-          //   // shadowColor: ,
-          //   shape: MaterialStatePropertyAll(
-          //     RoundedRectangleBorder(
-          //       borderRadius: BorderRadius.circular(20),
-          //     ),
-          //   ),
-          //   side: const MaterialStatePropertyAll(BorderSide(
-          //     width: 4,
-          //     color: Color(0xFF272727),
-          //   )),
-          //   // splashFactory: ,
-          //   // surfaceTintColor: ,
-          //   // tapTargetSize: ,
-          //   // textStyle: ,
-          //   // visualDensity: ,
-          // )),
+          // outlinedButtonTheme: outlinedButtonTheme,
           // popupMenuTheme: popupMenuTheme,
           // progressIndicatorTheme: progressIndicatorTheme,
           // radioTheme: radioTheme,
@@ -331,98 +348,6 @@ class MainApp extends StatelessWidget {
         home: const LayoutBase());
   }
 }
-
-// class MyHomepage extends StatefulWidget {
-//   const MyHomepage({super.key,});
-
-//   @override
-//   State<MyHomepage> createState() => _MyHomepageState();
-// }
-
-// class _MyHomepageState extends State<MyHomepage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Center(
-//         child: Expanded(
-//           child: Column(
-//             crossAxisAlignment: CrossAxisAlignment.center,
-//             mainAxisAlignment: MainAxisAlignment.center,
-//             children: [
-//               Container(
-//                 height: 50,
-//                 width: 50,
-//                 color: Theme.of(context).primaryColor,
-//               ),
-//               Container(
-//                 height: 50,
-//                 width: 50,
-//                 color: Theme.of(context).colorScheme.onPrimary,
-//               ),
-//               Container(
-//                 height: 50,
-//                 width: 50,
-//                 color: Theme.of(context).colorScheme.secondary,
-//               ),
-//               Container(
-//                 height: 50,
-//                 width: 50,
-//                 color: Theme.of(context).colorScheme.tertiary,
-//               ),
-//               Container(
-//                 height: 50,
-//                 width: 50,
-//                 color: Theme.of(context).colorScheme.surface,
-//               ),
-//               Container(
-//                 height: 50,
-//                 width: 50,
-//                 color: Theme.of(context).colorScheme.surfaceTint,
-//               ),
-//               Container(
-//                 height: 50,
-//                 width: 50,
-//                 color: Theme.of(context).colorScheme.onSurface,
-//               ),
-//               Text(
-//                 "Title Medium",
-//                 style: Theme.of(context).primaryTextTheme.titleMedium,
-//               ),
-//               Text(
-//                 "Title Small",
-//                 style: Theme.of(context).primaryTextTheme.titleSmall,
-//               ),
-//               Text(
-//                 "Body Large",
-//                 style: Theme.of(context).primaryTextTheme.bodyLarge,
-//               ),
-//               Text(
-//                 "Body Medium",
-//                 style: Theme.of(context).primaryTextTheme.bodyMedium,
-//               ),
-//               Text(
-//                 "Body Small",
-//                 style: Theme.of(context).primaryTextTheme.bodySmall,
-//               ),
-//               Text(
-//                 "Label Large",
-//                 style: Theme.of(context).primaryTextTheme.labelLarge,
-//               ),
-//               Text(
-//                 "Label Medium",
-//                 style: Theme.of(context).primaryTextTheme.labelMedium,
-//               ),
-//               Text(
-//                 "Label Small",
-//                 style: Theme.of(context).primaryTextTheme.labelSmall,
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
 
 class LayoutBase extends StatelessWidget {
   const LayoutBase({
@@ -485,7 +410,7 @@ class NormalBoxWithTextfield extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(32),
-        color: Theme.of(context).colorScheme.surface,
+        color: colorScheme.surface,
       ),
       child: IntrinsicHeight(
         child: Row(
@@ -517,14 +442,9 @@ class NormalBoxWithTextfield extends StatelessWidget {
                               alignment: Alignment.center,
                               child: Text(
                                 text,
-                                style: Theme.of(context)
-                                    .primaryTextTheme
-                                    .titleMedium
-                                    ?.copyWith(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .onSurface,
-                                    ),
+                                style: textTheme.titleMedium?.copyWith(
+                                  color: colorScheme.onSurface,
+                                ),
                               ),
                             ),
                           ),
@@ -537,52 +457,9 @@ class NormalBoxWithTextfield extends StatelessWidget {
                     TextField(
                       // controller: textEditingController,
                       obscureText: true,
-                      decoration: InputDecoration(
-                        disabledBorder: InputBorder.none,
-                        contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 20.0,
-                          vertical: 16.0,
-                        ),
-                        filled: true,
-                        fillColor: colorScheme.onPrimary,
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(
-                            color: colorScheme.onSurface,
-                            width: 2.0,
-                          ),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(
-                            color: colorScheme.error,
-                            width: 2.0,
-                          ),
-                        ),
-                        focusedErrorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(
-                            color: colorScheme.error,
-                            width: 2.0,
-                          ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(
-                            color: colorScheme.surface,
-                            width: 0.0,
-                          ),
-                        ),
-                        // errorText: "error",
-                        errorStyle: textTheme.labelSmall?.copyWith(
-                          color: colorScheme.error,
-                        ),
-                        // constraints: const BoxConstraints(
-                        //   minHeight: 89.0,
-                        // ),
+                      decoration: const InputDecoration(
+                        helperText: "hello",
                         labelText: "Password",
-                        labelStyle: textTheme.labelLarge,
-                        floatingLabelStyle: textTheme.bodyLarge,
                       ),
                       style: textTheme.titleSmall?.copyWith(
                         fontWeight: FontWeight.w500,
