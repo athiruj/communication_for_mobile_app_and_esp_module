@@ -476,12 +476,12 @@ class NormalLayout extends StatelessWidget {
           // crossAxisAlignment: CrossAxisAlignment.center,
           
           children: const [
-            NormalBox(),
-            MediumBox(),
+            // NormalBox(),
+            // MediumBox(),
             OutlineBox(),
             OutlineMediumBox(),
-            NormalBoxWithImage(),
-            NormalBoxWithTextfield(),
+            // NormalBoxWithImage(),
+            // NormalBoxWithTextfield(),
             OutlineBoxWithTextfield()
           ],
         ),

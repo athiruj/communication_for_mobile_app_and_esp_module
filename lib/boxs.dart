@@ -132,10 +132,10 @@ class OutlineBox extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.only(
-        bottom: 12,
+        bottom: 8,
         left: 48,
         right: 28,
-        top: 12,
+        top: 8,
       ),
       decoration: BoxDecoration(
         border: Border.all(
@@ -190,10 +190,10 @@ class OutlineMediumBox extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.only(
-        bottom: 12,
+        bottom: 8,
         left: 16,
         right: 28,
-        top: 12,
+        top: 8,
       ),
       decoration: BoxDecoration(
         border: Border.all(
@@ -309,10 +309,10 @@ class NormalBoxWithTextfield extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.only(
-        bottom: 16,
+        bottom: 12,
         left: 20,
         right: 32,
-        top: 16,
+        top: 12,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
@@ -369,9 +369,6 @@ class NormalBoxWithTextfield extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    const SizedBox(
-                      height: 6.0,
-                    ),
                     Container(
                       height: 56,
                       decoration: BoxDecoration(
@@ -419,10 +416,10 @@ class OutlineBoxWithTextfield extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.only(
-        bottom: 16,
+        bottom: 12,
         left: 16,
         right: 16,
-        top: 16,
+        top: 12,
       ),
       decoration: BoxDecoration(
         border: Border.all(
@@ -448,12 +445,15 @@ class OutlineBoxWithTextfield extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(
-                    displayText ?? "Display Text",
+                    displayText ?? "Display",
                     style: textTheme.titleMedium?.copyWith(
                       color: colorScheme.onSurface,
                     ),
                   ),
                 ),
+              ),
+              const SizedBox(
+                width: 38.0,
               ),
             ],
           ),
@@ -479,9 +479,6 @@ class OutlineBoxWithTextfield extends StatelessWidget {
             style: textTheme.titleSmall?.copyWith(
               fontWeight: FontWeight.w500,
             ),
-          ),
-          const SizedBox(
-            height: 6.0,
           ),
           Container(
             height: 56,
