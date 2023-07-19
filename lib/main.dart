@@ -65,13 +65,15 @@ class MainApp extends StatelessWidget {
                 backgroundColor: MaterialStateColor.resolveWith(
                   (Set<MaterialState> states) {
                     if (states.contains(MaterialState.pressed)) {
+                      // * colorScheme primary
                       return const Color(0xFF050301);
                     }
 
                     if (states.contains(MaterialState.disabled)) {
+                      // * colorScheme surface
                       return const Color(0xFFECECEC);
                     }
-
+                    // * colorScheme primary
                     return const Color(0xFF050301);
                   },
                 ),
@@ -81,13 +83,16 @@ class MainApp extends StatelessWidget {
                 foregroundColor: MaterialStateProperty.resolveWith(
                   (Set<MaterialState> states) {
                     if (states.contains(MaterialState.pressed)) {
+                      // * colorScheme onPrimary
                       return const Color(0xFFFCFBFC);
                     }
 
                     if (states.contains(MaterialState.disabled)) {
+                      // * colorScheme onSurface
                       return const Color(0xFFB6B5B4);
                     }
 
+                    // * colorScheme onPrimary
                     return const Color(0xFFFCFBFC);
                   },
                 ),
@@ -345,7 +350,88 @@ class MainApp extends StatelessWidget {
           // elevatedButtonTheme: elevatedButtonTheme,
           // expansionTileTheme: expansionTileTheme,
           // extensions: extensions,
-          // filledButtonTheme: filledButtonTheme,
+          filledButtonTheme: FilledButtonThemeData(
+            style: ButtonStyle(
+              alignment: Alignment.center,
+              // animationDuration: animationDuration,
+              backgroundColor: MaterialStateColor.resolveWith(
+                (Set<MaterialState> states) {
+                  if (states.contains(MaterialState.pressed)) {
+                    // * colorScheme primary
+                    return const Color(0xFFFCFBFC);
+                  }
+
+                  if (states.contains(MaterialState.disabled)) {
+                    // * colorScheme surface
+                    return const Color(0xFF272727);
+                  }
+                  // * colorScheme primary
+                  return const Color(0xFFFCFBFC);
+                },
+              ),
+              // elevation: elevation,
+              // enableFeedback: enableFeedback,
+              // fixedSize: fixedSize,
+              foregroundColor: MaterialStateProperty.resolveWith(
+                (Set<MaterialState> states) {
+                  if (states.contains(MaterialState.pressed)) {
+                    // * colorScheme onPrimary
+                    return const Color(0xFF050301);
+                  }
+
+                  if (states.contains(MaterialState.disabled)) {
+                    // * colorScheme onSurface
+                    return const Color(0xFF9F9E9D);
+                  }
+
+                  // * colorScheme onPrimary
+                  return const Color(0xFF050301);
+                },
+              ),
+              // iconColor: iconColor,
+              // iconSize: iconSize,
+              // maximumSize: maximumSize,
+              minimumSize: const MaterialStatePropertyAll(Size(314, 56)),
+              // mouseCursor: mouseCursor,
+              // overlayColor: overlayColor,
+              // padding: padding,
+              // shadowColor: shadowColor,
+              shape: const MaterialStatePropertyAll(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(12),
+                  ),
+                ),
+              ),
+              // side: null,
+              // splashFactory: splashFactory,
+              // surfaceTintColor: surfaceTintColor,
+              // tapTargetSize: tapTargetSize,
+              textStyle: MaterialStateProperty.resolveWith(
+                (Set<MaterialState> states) {
+                  if (states.contains(MaterialState.pressed)) {
+                    return const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                    );
+                  }
+
+                  if (states.contains(MaterialState.disabled)) {
+                    return const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                    );
+                  }
+
+                  return const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                  );
+                },
+              ),
+              // visualDensity: visualDensity,
+            ),
+          ),
           // floatingActionButtonTheme: floatingActionButtonTheme,
           // focusColor: focusColor,
           fontFamily: "Poppins",
