@@ -89,7 +89,7 @@ class MainApp extends StatelessWidget {
 
                     if (states.contains(MaterialState.disabled)) {
                       // * colorScheme onSurface
-                      return const Color(0xFFB6B5B4);
+                      return const Color(0xFFB6B5B4).withOpacity(0.3);
                     }
 
                     // * colorScheme onPrimary
@@ -381,7 +381,7 @@ class MainApp extends StatelessWidget {
 
                   if (states.contains(MaterialState.disabled)) {
                     // * colorScheme onSurface
-                    return const Color(0xFF9F9E9D);
+                    return const Color(0xFF9F9E9D).withOpacity(0.3);
                   }
 
                   // * colorScheme onPrimary
@@ -643,7 +643,7 @@ class NormalLayout extends StatelessWidget {
             // OutlineMediumBox(),
             // NormalBoxWithImage(),
             FilledButton(
-              onPressed: () {},
+              onPressed: null,
               child: const Text(
                 "START THE CONNECTION",
               ),
