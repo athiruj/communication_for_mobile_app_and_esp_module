@@ -20,7 +20,86 @@ class MainApp extends StatelessWidget {
           // applyElevationOverlayColor: applyElevationOverlayColor,
           // cupertinoOverrideTheme: cupertinoOverrideTheme,
           // extensions: extensions,
-          // inputDecorationTheme: inputDecorationTheme,
+          inputDecorationTheme: InputDecorationTheme(
+            // activeIndicatorBorder: ,
+            // alignLabelWithHint: ,
+            // border: ,
+            // constraints: ,
+            contentPadding: const EdgeInsets.symmetric(
+              horizontal: 20.0,
+              vertical: 16.0,
+            ),
+            // counterStyle: ,
+            disabledBorder: InputBorder.none,
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(
+                // * colorScheme surface
+                color: Color(0xFFECECEC),
+                width: 0.0,
+              ),
+            ),
+            errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(
+                // * colorScheme error
+                color: Color(0xFFC51010),
+                width: 2.0,
+              ),
+            ),
+            // errorMaxLines: ,
+            errorStyle: const TextStyle(
+                fontSize: 14,
+                // * colorScheme error
+                color: Color(0xFFC51010),
+                fontWeight: FontWeight.w400),
+
+            // floatingLabelAlignment: ,
+            // floatingLabelBehavior: ,
+            floatingLabelStyle: const TextStyle(
+                // * colorScheme primary
+                color: Color(0xFF050301),
+                fontSize: 18,
+                fontWeight: FontWeight.w500),
+            filled: true,
+            // * colorScheme onPrimary
+            fillColor: const Color(0xFFFCFBFC),
+            // focusColor: ,
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(
+                // * colorScheme onSurface
+                color: Color(0xFFB6B5B4),
+                width: 2.0,
+              ),
+            ),
+            focusedErrorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(
+                // * colorScheme error
+                color: Color(0xFFC51010),
+                width: 2.0,
+              ),
+            ),
+            // helperMaxLines: ,
+            // helperStyle: ,
+            // hintStyle: ,
+            // hoverColor: ,
+            // iconColor: ,
+            // isCollapsed: ,
+            // isDense: ,
+            labelStyle: const TextStyle(
+              // * colorScheme onSurface
+              color: Color(0xFFB6B5B4),
+              fontSize: 18,
+              fontWeight: FontWeight.w400,
+            ),
+            // outlineBorder: ,
+            // prefixIconColor: ,
+            // prefixStyle: ,
+            // suffixIconColor: ,
+            // suffixStyle: ,
+          ),
           // materialTapTargetSize: materialTapTargetSize,
           // pageTransitionsTheme: pageTransitionsTheme,
           // platform: platform,
@@ -62,37 +141,44 @@ class MainApp extends StatelessWidget {
           // primaryIconTheme: primaryIconTheme,
           primaryTextTheme: const TextTheme(
             titleMedium: TextStyle(
-                fontSize: 24,
                 color: Color(0xFF050301),
+                fontSize: 24,
                 fontWeight: FontWeight.w500),
             titleSmall: TextStyle(
-                fontSize: 20,
-                color: Color(0xFF050301),
-                fontWeight: FontWeight.w500),
+              color: Color(0xFF050301),
+              fontSize: 20,
+              fontWeight: FontWeight.w500,
+            ),
             bodyLarge: TextStyle(
-                fontSize: 18,
-                color: Color(0xFF050301),
-                fontWeight: FontWeight.w500),
+              color: Color(0xFF050301),
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+            ),
             bodyMedium: TextStyle(
-                fontSize: 16,
-                color: Color(0xFF050301),
-                fontWeight: FontWeight.w500),
+              color: Color(0xFF050301),
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+            ),
             bodySmall: TextStyle(
-                fontSize: 14,
-                color: Color(0xFF050301),
-                fontWeight: FontWeight.w500),
+              color: Color(0xFF050301),
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+            ),
             labelLarge: TextStyle(
-                fontSize: 18,
-                color: Color(0xFFB6B5B4),
-                fontWeight: FontWeight.w400),
+              color: Color(0xFFB6B5B4),
+              fontSize: 18,
+              fontWeight: FontWeight.w400,
+            ),
             labelMedium: TextStyle(
-                fontSize: 16,
-                color: Color(0xFFB6B5B4),
-                fontWeight: FontWeight.w400),
+              color: Color(0xFFB6B5B4),
+              fontSize: 16,
+              fontWeight: FontWeight.w400,
+            ),
             labelSmall: TextStyle(
-                fontSize: 14,
-                color: Color(0xFFB6B5B4),
-                fontWeight: FontWeight.w400),
+              color: Color(0xFFB6B5B4),
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
+            ),
           ),
           // textTheme: TextTheme(),
           // typography: typography,
@@ -158,6 +244,7 @@ class MainApp extends StatelessWidget {
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
               borderSide: const BorderSide(
+                // * colorScheme surface
                 color: Color(0xFF272727),
                 width: 0.0,
               ),
@@ -165,6 +252,7 @@ class MainApp extends StatelessWidget {
             errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
               borderSide: const BorderSide(
+                // * colorScheme error
                 color: Color(0xFFC51010),
                 width: 2.0,
               ),
@@ -172,21 +260,25 @@ class MainApp extends StatelessWidget {
             // errorMaxLines: ,
             errorStyle: const TextStyle(
                 fontSize: 14,
+                // * colorScheme error
                 color: Color(0xFFC51010),
                 fontWeight: FontWeight.w400),
 
             // floatingLabelAlignment: ,
             // floatingLabelBehavior: ,
             floatingLabelStyle: const TextStyle(
-                fontSize: 18,
+                // * colorScheme primary
                 color: Color(0xFFFCFBFC),
+                fontSize: 18,
                 fontWeight: FontWeight.w500),
             filled: true,
+            // * colorScheme onPrimary
             fillColor: const Color(0xFF050301),
             // focusColor: ,
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
               borderSide: const BorderSide(
+                // * colorScheme onSurface
                 color: Color(0xFF9F9E9D),
                 width: 2.0,
               ),
@@ -194,6 +286,7 @@ class MainApp extends StatelessWidget {
             focusedErrorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
               borderSide: const BorderSide(
+                // * colorScheme error
                 color: Color(0xFFC51010),
                 width: 2.0,
               ),
@@ -206,8 +299,9 @@ class MainApp extends StatelessWidget {
             // isCollapsed: ,
             // isDense: ,
             labelStyle: const TextStyle(
-              fontSize: 18,
+              // * colorScheme onSurface
               color: Color(0xFF9F9E9D),
+              fontSize: 18,
               fontWeight: FontWeight.w400,
             ),
             // outlineBorder: ,
