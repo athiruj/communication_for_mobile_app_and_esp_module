@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'boxs.dart';
+
 void main() {
   runApp(const MainApp());
 }
@@ -425,7 +427,7 @@ class MainApp extends StatelessWidget {
           filledButtonTheme: FilledButtonThemeData(
             style: ButtonStyle(
               alignment: Alignment.center,
-              // animationDuration: animationDuration,
+              animationDuration: const Duration(milliseconds: 50),
               backgroundColor: MaterialStateColor.resolveWith(
                 (Set<MaterialState> states) {
                   if (states.contains(MaterialState.disabled)) {
@@ -785,39 +787,59 @@ class NormalLayout extends StatelessWidget {
         padding: const EdgeInsets.symmetric(
           horizontal: 16.0,
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: ListView(
+          // mainAxisAlignment: MainAxisAlignment.center,
+          // crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // NormalBox(),
-            // MediumBox(),
-            // OutlineBox(),
-            // OutlineMediumBox(),
-            // NormalBoxWithImage(),
+            const NormalBox(),
+            const SizedBox(
+              height: 20.0,
+            ),
+            const SizedBox(
+              height: 20.0,
+            ),
+            const MediumBox(),
+            const SizedBox(
+              height: 20.0,
+            ),
+            const OutlineBox(),
+            const SizedBox(
+              height: 20.0,
+            ),
+            const OutlineMediumBox(),
+            const SizedBox(
+              height: 20.0,
+            ),
+            const NormalBoxWithImage(),
+            const SizedBox(
+              height: 20.0,
+            ),
+            const NormalBoxWithTextfield(),
+            const SizedBox(
+              height: 20.0,
+            ),
+            const OutlineBoxWithTextfield(),
+            const SizedBox(
+              height: 20.0,
+            ),
             FilledButton(
-              autofocus: false,
+              autofocus: true,
               onPressed: () {},
               child: Row(children: const [
                 Icon(Icons.add),
                 Expanded(child: Center(child: Text("ADD NEW DEVICE")))
               ]),
-
-              // child: const Text(
-              //   "START THE CONNECTION",
-              // ),
             ),
             const SizedBox(
               height: 20.0,
             ),
             TextButton(
               autofocus: false,
-              onPressed: (){},
+              onPressed: () {},
               child: const Text(
                 "CANCAL",
               ),
             ),
-            // NormalBoxWithTextfield(),
-            // OutlineBoxWithTextfield()
           ],
         ),
       ),

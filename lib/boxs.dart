@@ -295,6 +295,7 @@ class NormalBoxWithTextfield extends StatelessWidget {
 
   final StatusBar? statusBar;
 
+
   const NormalBoxWithTextfield({
     super.key,
     this.displayText,
@@ -347,7 +348,7 @@ class NormalBoxWithTextfield extends StatelessWidget {
                             child: Align(
                               alignment: Alignment.center,
                               child: Text(
-                                displayText ?? "Display Text",
+                                displayText ?? "Display",
                                 style: textTheme.titleMedium?.copyWith(
                                   color: colorScheme.onSurface,
                                 ),
@@ -369,16 +370,10 @@ class NormalBoxWithTextfield extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    FilledButton(
+                    TextButton(
                       onPressed: (){},
-                      // height: 56,
-                      // decoration: BoxDecoration(
-                      //   borderRadius: BorderRadius.circular(12),
-                      // ),
-                      // alignment: Alignment.center,
-                      child: Text(
-                        "Button Here",
-                        style: textTheme.titleSmall,
+                      child: const Text(
+                        "BUTTON",
                       ),
                     )
                   ],
@@ -429,66 +424,68 @@ class OutlineBoxWithTextfield extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(20),
       ),
-      child: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Row(
-            children: [
-              Container(
-                color: Colors.amber,
-                height: 52,
-                width: 52,
-              ),
-              const SizedBox(
-                width: 20.0,
-              ),
-              Flexible(
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    displayText ?? "Display",
-                    style: textTheme.titleMedium?.copyWith(
-                      color: colorScheme.onSurface,
+      child: IntrinsicWidth(
+        stepWidth: double.infinity,
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Row(
+              children: [
+                Container(
+                  color: Colors.amber,
+                  height: 52,
+                  width: 52,
+                ),
+                const SizedBox(
+                  width: 20.0,
+                ),
+                Flexible(
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      displayText ?? "Display",
+                      style: textTheme.titleMedium?.copyWith(
+                        color: colorScheme.onSurface,
+                      ),
                     ),
                   ),
                 ),
+                const SizedBox(
+                  width: 38.0,
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 16.0,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                constraints: const BoxConstraints(minHeight: 89),
+                fillColor: colorScheme.surface,
+                labelText: "Password",
               ),
-              const SizedBox(
-                width: 38.0,
+              style: textTheme.titleSmall?.copyWith(
+                fontWeight: FontWeight.w500,
               ),
-            ],
-          ),
-          const SizedBox(
-            height: 12.0,
-          ),
-          TextField(
-            decoration: InputDecoration(
-              constraints: const BoxConstraints(minHeight: 89),
-              fillColor: colorScheme.surface,
-              labelText: "Password",
             ),
-            style: textTheme.titleSmall?.copyWith(
-              fontWeight: FontWeight.w500,
+            TextField(
+              decoration: InputDecoration(
+                constraints: const BoxConstraints(minHeight: 89),
+                fillColor: colorScheme.surface,
+                labelText: "Password",
+              ),
+              style: textTheme.titleSmall?.copyWith(
+                fontWeight: FontWeight.w500,
+              ),
             ),
-          ),
-          TextField(
-            decoration: InputDecoration(
-              constraints: const BoxConstraints(minHeight: 89),
-              fillColor: colorScheme.surface,
-              labelText: "Password",
-            ),
-            style: textTheme.titleSmall?.copyWith(
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-          FilledButton(
-            onPressed: (){},
-            child: Text(
-              "Button Here",
-              style: textTheme.titleSmall,
-            ),
-          )
-        ],
+            TextButton(
+              onPressed: (){},
+              child: const Text(
+                "BUTTON",
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
