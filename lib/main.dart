@@ -13,6 +13,32 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ColorScheme colorSchemeLight = const ColorScheme.light(
+      primary: Color(0xFF050301),
+      onPrimary: Color(0xFFFCFBFC),
+      secondary: Color(0xFF0085FF),
+      onSecondary: Color(0xFFA0D2FF),
+      tertiary: Color(0xFF5EDC1F),
+      onTertiary: Color(0xFFDBFFC9),
+      surface: Color(0xFFECECEC),
+      surfaceTint: Color(0xFFDADAD9),
+      onSurface: Color(0xFFB6B5B4),
+      error: Color(0xFFC51010),
+    );
+
+    ColorScheme colorSchemeDark = const ColorScheme.dark(
+      primary: Color(0xFFFCFBFC),
+      onPrimary: Color(0xFF050301),
+      secondary: Color(0xFF0085FF),
+      onSecondary: Color(0xFFA0D2FF),
+      tertiary: Color(0xFF5EDC1F),
+      onTertiary: Color(0xFFDBFFC9),
+      surface: Color(0xFF272727),
+      surfaceTint: Color(0xFF4F4F4E),
+      onSurface: Color(0xFF9F9E9D),
+      error: Color(0xFFC51010),
+    );
+
     return MaterialApp(
         theme: ThemeData(
           // appBarTheme: appBarTheme,
@@ -29,18 +55,7 @@ class MainApp extends StatelessWidget {
           // cardTheme: cardTheme,
           // checkboxTheme: checkboxTheme,
           // chipTheme: chipTheme,
-          colorScheme: const ColorScheme.light(
-            primary: Color(0xFF050301),
-            onPrimary: Color(0xFFFCFBFC),
-            secondary: Color(0xFF0085FF),
-            onSecondary: Color(0xFFA0D2FF),
-            tertiary: Color(0xFF5EDC1F),
-            onTertiary: Color(0xFFDBFFC9),
-            surface: Color(0xFFECECEC),
-            surfaceTint: Color(0xFFDADAD9),
-            onSurface: Color(0xFFB6B5B4),
-            error: Color(0xFFC51010),
-          ),
+          colorScheme: colorSchemeLight,
           // cupertinoOverrideTheme: cupertinoOverrideTheme,
           // dataTableTheme: dataTableTheme,
           // dialogBackgroundColor: dialogBackgroundColor,
@@ -56,31 +71,31 @@ class MainApp extends StatelessWidget {
           filledButtonTheme: FilledButtonThemeData(
             style: ButtonStyle(
               alignment: Alignment.center,
-              animationDuration: const Duration(milliseconds: 10),
+              // animationDuration: const Duration(milliseconds: 10),
               backgroundColor: MaterialStateColor.resolveWith(
                 (Set<MaterialState> states) {
                   if (states.contains(MaterialState.disabled)) {
                     // * colorScheme surface
-                    return const Color(0xFFECECEC);
+                    return colorSchemeLight.surface;
                   }
 
-                  if (states.contains(MaterialState.hovered)) {
-                    // * colorScheme surfaceTint
-                    return const Color(0xFFDADAD9);
-                  }
+                  // if (states.contains(MaterialState.hovered)) {
+                  //   // * colorScheme surfaceTint
+                  //   return colorSchemeLight.surfaceTint;
+                  // }
 
                   if (states.contains(MaterialState.focused)) {
                     // * colorScheme primary
-                    return const Color(0xFF050301);
+                    return colorSchemeLight.primary;
                   }
 
-                  if (states.contains(MaterialState.pressed)) {
-                    // * colorScheme primary
-                    return const Color(0xFF050301);
-                  }
+                  // if (states.contains(MaterialState.pressed)) {
+                  //   // * colorScheme primary
+                  //   return colorSchemeLight.primary;
+                  // }
 
                   // * colorScheme surface
-                  return const Color(0xFFECECEC);
+                  return colorSchemeLight.surface;
                 },
               ),
               // elevation: elevation,
@@ -90,26 +105,26 @@ class MainApp extends StatelessWidget {
                 (Set<MaterialState> states) {
                   if (states.contains(MaterialState.disabled)) {
                     // * colorScheme surfaceTint
-                    return const Color(0xFFDADAD9);
+                    return colorSchemeLight.surfaceTint;
                   }
 
-                  if (states.contains(MaterialState.hovered)) {
-                    // * colorScheme onSurface
-                    return const Color(0xFFB6B5B4);
-                  }
+                  // if (states.contains(MaterialState.hovered)) {
+                  //   // * colorScheme onSurface
+                  //   return colorSchemeLight.onSurface;
+                  // }
 
                   if (states.contains(MaterialState.focused)) {
                     // * colorScheme onPrimary
-                    return const Color(0xFFFCFBFC);
+                    return colorSchemeLight.onPrimary;
                   }
 
-                  if (states.contains(MaterialState.pressed)) {
-                    // * colorScheme onPrimary
-                    return const Color(0xFFFCFBFC);
-                  }
+                  // if (states.contains(MaterialState.pressed)) {
+                  //   // * colorScheme onPrimary
+                  //   return colorSchemeLight.onPrimary;
+                  // }
 
                   // * colorScheme onSurface
-                  return const Color(0xFFB6B5B4);
+                  return colorSchemeLight.onSurface;
                 },
               ),
               // iconColor: iconColor,
@@ -135,7 +150,7 @@ class MainApp extends StatelessWidget {
               // tapTargetSize: tapTargetSize,
               textStyle: const MaterialStatePropertyAll(
                 TextStyle(
-                  fontSize: 20.0,
+                  fontSize: 18.0,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -164,52 +179,52 @@ class MainApp extends StatelessWidget {
             disabledBorder: InputBorder.none,
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12.0),
-              borderSide: const BorderSide(
+              borderSide: BorderSide(
                 // * colorScheme surface
-                color: Color(0xFFECECEC),
+                color: colorSchemeLight.surface,
                 width: 0.0,
               ),
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12.0),
-              borderSide: const BorderSide(
+              borderSide: BorderSide(
                 // * colorScheme error
-                color: Color(0xFFC51010),
+                color: colorSchemeLight.error,
                 width: 2.0,
               ),
             ),
             // errorMaxLines: errorMaxLines,
-            errorStyle: const TextStyle(
+            errorStyle: TextStyle(
               fontSize: 14,
               // * colorScheme error
-              color: Color(0xFFC51010),
+              color: colorSchemeLight.error,
               fontWeight: FontWeight.w400,
             ),
             // * colorScheme onPrimary
-            fillColor: const Color(0xFFFCFBFC),
+            fillColor: colorSchemeLight.onPrimary,
             filled: true,
             // floatingLabelAlignment: floatingLabelAlignment,
             // floatingLabelBehavior: floatingLabelBehavior,
-            floatingLabelStyle: const TextStyle(
-              // * colorScheme primary
-              color: Color(0xFFB6B5B4),
-              fontSize: 18.0,
-              fontWeight: FontWeight.w600,
+            floatingLabelStyle: TextStyle(
+              // * colorScheme onSurface
+              color: colorSchemeLight.onSurface,
+              fontSize: 16.0,
+              fontWeight: FontWeight.w500,
             ),
             // focusColor: focusColor,
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12.0),
-              borderSide: const BorderSide(
+              borderSide: BorderSide(
                 // * colorScheme onSurface
-                color: Color(0xFFB6B5B4),
+                color: colorSchemeLight.onSurface,
                 width: 2.0,
               ),
             ),
             focusedErrorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12.0),
-              borderSide: const BorderSide(
+              borderSide: BorderSide(
                 // * colorScheme error
-                color: Color(0xFFC51010),
+                color: colorSchemeLight.error,
                 width: 2.0,
               ),
             ),
@@ -220,9 +235,9 @@ class MainApp extends StatelessWidget {
             // iconColor: iconColor,
             // isCollapsed: isCollapsed,
             // isDense: isDense,
-            labelStyle: const TextStyle(
+            labelStyle: TextStyle(
               // * colorScheme onSurface
-              color: Color(0xFFB6B5B4),
+              color: colorSchemeLight.onSurface,
               fontSize: 18.0,
               fontWeight: FontWeight.w400,
             ),
@@ -244,56 +259,56 @@ class MainApp extends StatelessWidget {
           // pageTransitionsTheme: pageTransitionsTheme,
           // platform: platform,
           // popupMenuTheme: popupMenuTheme,
-          primaryColor: const Color(0xFF050301),
+          primaryColor: colorSchemeLight.primary,
           // primaryColorDark: primaryColorDark,
           // primaryColorLight: primaryColorLight,
           // primaryIconTheme: primaryIconTheme,
-          primaryTextTheme: const TextTheme(
+          primaryTextTheme: TextTheme(
             titleMedium: TextStyle(
               // * colorScheme primary
-              color: Color(0xFF050301),
+              color: colorSchemeLight.primary,
               fontSize: 24.0,
               fontWeight: FontWeight.w500,
             ),
             titleSmall: TextStyle(
               // * colorScheme primary
-              color: Color(0xFF050301),
+              color: colorSchemeLight.primary,
               fontSize: 20.0,
               fontWeight: FontWeight.w500,
             ),
             bodyLarge: TextStyle(
               // * colorScheme primary
-              color: Color(0xFF050301),
+              color: colorSchemeLight.primary,
               fontSize: 18.0,
               fontWeight: FontWeight.w500,
             ),
             bodyMedium: TextStyle(
               // * colorScheme primary
-              color: Color(0xFF050301),
+              color: colorSchemeLight.primary,
               fontSize: 16.0,
               fontWeight: FontWeight.w500,
             ),
             bodySmall: TextStyle(
               // * colorScheme primary
-              color: Color(0xFF050301),
+              color: colorSchemeLight.primary,
               fontSize: 14.0,
               fontWeight: FontWeight.w500,
             ),
             labelLarge: TextStyle(
-              // * colorScheme primary
-              color: Color(0xFFB6B5B4),
+              // * colorScheme onSurface
+              color: colorSchemeLight.onSurface,
               fontSize: 18.0,
               fontWeight: FontWeight.w400,
             ),
             labelMedium: TextStyle(
               // * colorScheme onSurface
-              color: Color(0xFFB6B5B4),
+              color: colorSchemeLight.onSurface,
               fontSize: 16.0,
               fontWeight: FontWeight.w400,
             ),
             labelSmall: TextStyle(
               // * colorScheme onSurface
-              color: Color(0xFFB6B5B4),
+              color: colorSchemeLight.onSurface,
               fontSize: 14.0,
               fontWeight: FontWeight.w400,
             ),
@@ -301,7 +316,7 @@ class MainApp extends StatelessWidget {
           // progressIndicatorTheme: progressIndicatorTheme,
           // radioTheme: radioTheme,
           // * colorScheme onPrimary
-          scaffoldBackgroundColor: const Color(0xFFFCFBFC),
+          scaffoldBackgroundColor: colorSchemeLight.onPrimary,
           // scrollbarTheme: scrollbarTheme,
           // secondaryHeaderColor: secondaryHeaderColor,
           // segmentedButtonTheme: segmentedButtonTheme,
@@ -325,26 +340,26 @@ class MainApp extends StatelessWidget {
                 (Set<MaterialState> states) {
                   if (states.contains(MaterialState.disabled)) {
                     // * colorScheme surfaceTint
-                    return const Color(0xFFDADAD9);
+                    return colorSchemeLight.surfaceTint;
                   }
 
-                  if (states.contains(MaterialState.hovered)) {
-                    // * colorScheme Primary
-                    return const Color(0xFF050301);
-                  }
+                  // if (states.contains(MaterialState.hovered)) {
+                  //   // * colorScheme Primary
+                  //   return colorSchemeLight.primary;
+                  // }
 
                   if (states.contains(MaterialState.focused)) {
                     // * colorScheme Primary
-                    return const Color(0xFF050301);
+                    return colorSchemeLight.primary;
                   }
 
-                  if (states.contains(MaterialState.pressed)) {
-                    // * colorScheme Primary
-                    return const Color(0xFF050301);
-                  }
+                  // if (states.contains(MaterialState.pressed)) {
+                  //   // * colorScheme Primary
+                  //   return colorSchemeLight.primary;
+                  // }
 
                   // * colorScheme onSurface
-                  return const Color(0xFFB6B5B4);
+                  return colorSchemeLight.onSurface;
                 },
               ),
               // iconColor: iconColor,
@@ -368,7 +383,7 @@ class MainApp extends StatelessWidget {
               // tapTargetSize: tapTargetSize,
               textStyle: const MaterialStatePropertyAll(
                 TextStyle(
-                  fontSize: 20.0,
+                  fontSize: 18.0,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -400,18 +415,7 @@ class MainApp extends StatelessWidget {
           // cardTheme: cardTheme,
           // checkboxTheme: checkboxTheme,
           // chipTheme: chipTheme,
-          colorScheme: const ColorScheme.dark(
-            primary: Color(0xFFFCFBFC),
-            onPrimary: Color(0xFF050301),
-            secondary: Color(0xFF0085FF),
-            onSecondary: Color(0xFFA0D2FF),
-            tertiary: Color(0xFF5EDC1F),
-            onTertiary: Color(0xFFDBFFC9),
-            surface: Color(0xFF272727),
-            surfaceTint: Color(0xFF4F4F4E),
-            onSurface: Color(0xFF9F9E9D),
-            error: Color(0xFFC51010),
-          ),
+          colorScheme: colorSchemeDark,
           // cupertinoOverrideTheme: cupertinoOverrideTheme,
           // dataTableTheme: dataTableTheme,
           // dialogBackgroundColor: dialogBackgroundColor,
@@ -432,26 +436,26 @@ class MainApp extends StatelessWidget {
                 (Set<MaterialState> states) {
                   if (states.contains(MaterialState.disabled)) {
                     // * colorScheme surface
-                    return const Color(0xFF272727);
+                    return colorSchemeDark.surface;
                   }
 
-                  if (states.contains(MaterialState.hovered)) {
-                    // * colorScheme surfaceTint
-                    return const Color(0xFF4F4F4E);
-                  }
+                  // if (states.contains(MaterialState.hovered)) {
+                  //   // * colorScheme surfaceTint
+                  //   return colorSchemeDark.surfaceTint;
+                  // }
 
                   if (states.contains(MaterialState.focused)) {
                     // * colorScheme primary
-                    return const Color(0xFFFCFBFC);
+                    return colorSchemeDark.primary;
                   }
 
-                  if (states.contains(MaterialState.pressed)) {
-                    // * colorScheme primary
-                    return const Color(0xFFFCFBFC);
-                  }
+                  // if (states.contains(MaterialState.pressed)) {
+                  //   // * colorScheme primary
+                  //   return colorSchemeDark.primary;
+                  // }
 
                   // * colorScheme surface
-                  return const Color(0xFF272727);
+                  return colorSchemeDark.surface;
                 },
               ),
               // elevation: elevation,
@@ -461,26 +465,26 @@ class MainApp extends StatelessWidget {
                 (Set<MaterialState> states) {
                   if (states.contains(MaterialState.disabled)) {
                     // * colorScheme surfaceTint
-                    return const Color(0xFF4F4F4E);
+                    return colorSchemeDark.surfaceTint;
                   }
 
-                  if (states.contains(MaterialState.hovered)) {
-                    // * colorScheme onSurface
-                    return const Color(0xFF9F9E9D);
-                  }
+                  // if (states.contains(MaterialState.hovered)) {
+                  //   // * colorScheme onSurface
+                  //   return colorSchemeDark.onSurface;
+                  // }
 
                   if (states.contains(MaterialState.focused)) {
                     // * colorScheme onPrimary
-                    return const Color(0xFF050301);
+                    return colorSchemeDark.onPrimary;
                   }
 
-                  if (states.contains(MaterialState.pressed)) {
-                    // * colorScheme onPrimary
-                    return const Color(0xFF050301);
-                  }
+                  // if (states.contains(MaterialState.pressed)) {
+                  //   // * colorScheme onPrimary
+                  //   return colorSchemeDark.onPrimary;
+                  // }
 
                   // * colorScheme onSurface
-                  return const Color(0xFF9F9E9D);
+                  return colorSchemeDark.onSurface;
                 },
               ),
               // iconColor: iconColor,
@@ -506,7 +510,7 @@ class MainApp extends StatelessWidget {
               // tapTargetSize: tapTargetSize,
               textStyle: const MaterialStatePropertyAll(
                 TextStyle(
-                  fontSize: 20.0,
+                  fontSize: 18.0,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -529,57 +533,57 @@ class MainApp extends StatelessWidget {
             // constraints: constraints,
             contentPadding: const EdgeInsets.symmetric(
               horizontal: 20.0,
-              vertical: 16.0,
+              vertical: 12.0,
             ),
             // counterStyle: counterStyle,
             disabledBorder: InputBorder.none,
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12.0),
-              borderSide: const BorderSide(
+              borderSide: BorderSide(
                 // * colorScheme surface
-                color: Color(0xFF272727),
+                color: colorSchemeDark.surface,
                 width: 0.0,
               ),
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12.0),
-              borderSide: const BorderSide(
+              borderSide: BorderSide(
                 // * colorScheme error
-                color: Color(0xFFC51010),
+                color: colorSchemeDark.error,
                 width: 2.0,
               ),
             ),
             // errorMaxLines: errorMaxLines,
-            errorStyle: const TextStyle(
+            errorStyle: TextStyle(
               fontSize: 14.0,
               // * colorScheme error
-              color: Color(0xFFC51010),
+              color: colorSchemeDark.error,
               fontWeight: FontWeight.w400,
             ),
-            fillColor: const Color(0xFF050301),
+            fillColor: colorSchemeDark.onPrimary,
             filled: true,
             // floatingLabelAlignment: floatingLabelAlignment,
             // floatingLabelBehavior: floatingLabelBehavior,
-            floatingLabelStyle: const TextStyle(
-              // * colorScheme primary
-              color: Color(0xFF9F9E9D),
+            floatingLabelStyle: TextStyle(
+              // * colorScheme onSurface
+              color: colorSchemeDark.onSurface,
               fontSize: 18.0,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w500,
             ),
             // focusColor: focusColor,
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12.0),
-              borderSide: const BorderSide(
+              borderSide: BorderSide(
                 // * colorScheme onSurface
-                color: Color(0xFF9F9E9D),
+                color: colorSchemeDark.onSurface,
                 width: 2.0,
               ),
             ),
             focusedErrorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12.0),
-              borderSide: const BorderSide(
+              borderSide: BorderSide(
                 // * colorScheme error
-                color: Color(0xFFC51010),
+                color: colorSchemeDark.error,
                 width: 2.0,
               ),
             ),
@@ -590,9 +594,9 @@ class MainApp extends StatelessWidget {
             // iconColor: iconColor,
             // isCollapsed: isCollapsed,
             // isDense: isDense,
-            labelStyle: const TextStyle(
+            labelStyle: TextStyle(
               // * colorScheme onSurface
-              color: Color(0xFF9F9E9D),
+              color: colorSchemeDark.onSurface,
               fontSize: 18.0,
               fontWeight: FontWeight.w400,
             ),
@@ -614,64 +618,64 @@ class MainApp extends StatelessWidget {
           // pageTransitionsTheme: pageTransitionsTheme,
           // platform: platform,
           // popupMenuTheme: popupMenuTheme,
-          primaryColor: const Color(0xFFFCFBFC),
+          primaryColor: colorSchemeDark.primary,
           // primaryColorDark: primaryColorDark,
           // primaryColorLight: primaryColorLight,
           // primaryIconTheme: primaryIconTheme,
-          primaryTextTheme: const TextTheme(
+          primaryTextTheme: TextTheme(
             titleMedium: TextStyle(
               fontSize: 24.0,
               // * colorScheme primary
-              color: Color(0xFFFCFBFC),
+              color: colorSchemeDark.primary,
               fontWeight: FontWeight.w500,
             ),
             titleSmall: TextStyle(
               fontSize: 20.0,
               // * colorScheme primary
-              color: Color(0xFFFCFBFC),
+              color: colorSchemeDark.primary,
               fontWeight: FontWeight.w500,
             ),
             bodyLarge: TextStyle(
               fontSize: 18.0,
               // * colorScheme primary
-              color: Color(0xFFFCFBFC),
+              color: colorSchemeDark.primary,
               fontWeight: FontWeight.w500,
             ),
             bodyMedium: TextStyle(
               fontSize: 16.0,
               // * colorScheme primary
-              color: Color(0xFFFCFBFC),
+              color: colorSchemeDark.primary,
               fontWeight: FontWeight.w500,
             ),
             bodySmall: TextStyle(
               fontSize: 14.0,
               // * colorScheme primary
-              color: Color(0xFFFCFBFC),
+              color: colorSchemeDark.primary,
               fontWeight: FontWeight.w500,
             ),
             labelLarge: TextStyle(
               fontSize: 18.0,
               // * colorScheme onSurface
-              color: Color(0xFF9F9E9D),
+              color: colorSchemeDark.onSurface,
               fontWeight: FontWeight.w400,
             ),
             labelMedium: TextStyle(
               fontSize: 16.0,
               // * colorScheme onSurface
-              color: Color(0xFF9F9E9D),
+              color: colorSchemeDark.onSurface,
               fontWeight: FontWeight.w400,
             ),
             labelSmall: TextStyle(
               fontSize: 14.0,
               // * colorScheme onSurface
-              color: Color(0xFF9F9E9D),
+              color: colorSchemeDark.onSurface,
               fontWeight: FontWeight.w400,
             ),
           ),
           // progressIndicatorTheme: progressIndicatorTheme,
           // radioTheme: radioTheme,
           // * colorScheme onPrimary
-          scaffoldBackgroundColor: const Color(0xFF050301),
+          scaffoldBackgroundColor: colorSchemeDark.onPrimary,
           // scrollbarTheme: scrollbarTheme,
           // secondaryHeaderColor: secondaryHeaderColor,
           // segmentedButtonTheme: segmentedButtonTheme,
@@ -695,26 +699,26 @@ class MainApp extends StatelessWidget {
                 (Set<MaterialState> states) {
                   if (states.contains(MaterialState.disabled)) {
                     // * colorScheme surfaceTint
-                    return const Color(0xFF4F4F4E);
+                    return colorSchemeDark.surfaceTint;
                   }
 
-                  if (states.contains(MaterialState.hovered)) {
-                    // * colorScheme Primary
-                    return const Color(0xFFFCFBFC);
-                  }
+                  // if (states.contains(MaterialState.hovered)) {
+                  //   // * colorScheme Primary
+                  //   return colorSchemeDark.primary;
+                  // }
 
                   if (states.contains(MaterialState.focused)) {
                     // * colorScheme Primary
-                    return const Color(0xFFFCFBFC);
+                    return colorSchemeDark.primary;
                   }
 
-                  if (states.contains(MaterialState.pressed)) {
-                    // * colorScheme Primary
-                    return const Color(0xFFFCFBFC);
-                  }
+                  // if (states.contains(MaterialState.pressed)) {
+                  //   // * colorScheme Primary
+                  //   return colorSchemeDark.primary;
+                  // }
 
                   // * colorScheme onSurface
-                  return const Color(0xFF9F9E9D);
+                  return colorSchemeDark.onSurface;
                 },
               ),
               // iconColor: iconColor,
@@ -740,7 +744,7 @@ class MainApp extends StatelessWidget {
               // tapTargetSize: tapTargetSize,
               textStyle: const MaterialStatePropertyAll(
                 TextStyle(
-                  fontSize: 20.0,
+                  fontSize: 18.0,
                   fontWeight: FontWeight.w500,
                 ),
               ),

@@ -132,14 +132,14 @@ class OutlineBox extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.only(
-        bottom: 8,
-        left: 48,
-        right: 28,
-        top: 8,
+        bottom: 8.0,
+        left: 50.0,
+        right: 30.0,
+        top: 8.0,
       ),
       decoration: BoxDecoration(
         border: Border.all(
-          width: 4,
+          width: 2,
           color: colorScheme.surface,
         ),
         borderRadius: BorderRadius.circular(20),
@@ -191,13 +191,13 @@ class OutlineMediumBox extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(
         bottom: 8,
-        left: 16,
-        right: 28,
+        left: 18,
+        right: 30,
         top: 8,
       ),
       decoration: BoxDecoration(
         border: Border.all(
-          width: 4,
+          width: 2,
           color: colorScheme.surface,
         ),
         borderRadius: BorderRadius.circular(20),
@@ -362,7 +362,7 @@ class NormalBoxWithTextfield extends StatelessWidget {
                     ),
                     TextField(
                       decoration: const InputDecoration(
-                        constraints: BoxConstraints(minHeight: 89),
+                        constraints: BoxConstraints(minHeight: 73),
                         labelText: "Password",
                       ),
                       style: textTheme.titleSmall?.copyWith(
@@ -390,7 +390,7 @@ class NormalBoxWithTextfield extends StatelessWidget {
   }
 }
 
-/// **NormalBoxWithTextfield class**
+/// **OutlineBoxWithTextfield class**
 /// - Wi-Fi Connecting Box
 class OutlineBoxWithTextfield extends StatelessWidget {
   final String? displayText;
@@ -412,13 +412,13 @@ class OutlineBoxWithTextfield extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(
         bottom: 12,
-        left: 16,
-        right: 16,
+        left: 18,
+        right: 18,
         top: 12,
       ),
       decoration: BoxDecoration(
         border: Border.all(
-          width: 4,
+          width: 2,
           color: colorScheme.surface,
         ),
         borderRadius: BorderRadius.circular(20),
@@ -459,7 +459,7 @@ class OutlineBoxWithTextfield extends StatelessWidget {
             ),
             TextField(
               decoration: InputDecoration(
-                constraints: const BoxConstraints(minHeight: 89),
+                constraints: const BoxConstraints(minHeight: 73),
                 fillColor: colorScheme.surface,
                 labelText: "Password",
               ),
@@ -469,7 +469,7 @@ class OutlineBoxWithTextfield extends StatelessWidget {
             ),
             TextField(
               decoration: InputDecoration(
-                constraints: const BoxConstraints(minHeight: 89),
+                constraints: const BoxConstraints(minHeight: 73),
                 fillColor: colorScheme.surface,
                 labelText: "Password",
               ),
