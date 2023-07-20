@@ -42,7 +42,7 @@ class MainApp extends StatelessWidget {
               tertiary: Color(0xFF5EDC1F),
               onTertiary: Color(0xFFDBFFC9),
               surface: Color(0xFFECECEC),
-              surfaceTint: Color(0xFFD1D0D0),
+              surfaceTint: Color(0xFFDADAD9),
               onSurface: Color(0xFFB6B5B4),
               error: Color(0xFFC51010),
             ),
@@ -64,17 +64,28 @@ class MainApp extends StatelessWidget {
                 // animationDuration: animationDuration,
                 backgroundColor: MaterialStateColor.resolveWith(
                   (Set<MaterialState> states) {
+                    if (states.contains(MaterialState.disabled)) {
+                      // * colorScheme transparent
+                      return const Color(0x00000000);
+                    }
+
+                    if (states.contains(MaterialState.hovered)) {
+                      // * colorScheme surfaceTint
+                      return const Color(0xFFDADAD9);
+                    }
+
+                    if (states.contains(MaterialState.focused)) {
+                      // * colorScheme primary
+                      return const Color(0xFF050301);
+                    }
+
                     if (states.contains(MaterialState.pressed)) {
                       // * colorScheme primary
                       return const Color(0xFF050301);
                     }
 
-                    if (states.contains(MaterialState.disabled)) {
-                      // * colorScheme surface
-                      return const Color(0xFFECECEC);
-                    }
-                    // * colorScheme primary
-                    return const Color(0xFF050301);
+                    // * colorScheme surface
+                    return const Color(0xFFECECEC);
                   },
                 ),
                 // elevation: elevation,
@@ -82,18 +93,28 @@ class MainApp extends StatelessWidget {
                 // fixedSize: fixedSize,
                 foregroundColor: MaterialStateProperty.resolveWith(
                   (Set<MaterialState> states) {
+                    if (states.contains(MaterialState.disabled)) {
+                      // * colorScheme surfaceTint
+                      return const Color(0xFFDADAD9);
+                    }
+
+                    if (states.contains(MaterialState.hovered)) {
+                      // * colorScheme onSurface
+                      return const Color(0xFFECECEC);
+                    }
+
+                    if (states.contains(MaterialState.focused)) {
+                      // * colorScheme onPrimary
+                      return const Color(0xFFFCFBFC);
+                    }
+
                     if (states.contains(MaterialState.pressed)) {
                       // * colorScheme onPrimary
                       return const Color(0xFFFCFBFC);
                     }
 
-                    if (states.contains(MaterialState.disabled)) {
-                      // * colorScheme onSurface
-                      return const Color(0xFFB6B5B4).withOpacity(0.3);
-                    }
-
-                    // * colorScheme onPrimary
-                    return const Color(0xFFFCFBFC);
+                    // * colorScheme onSurface
+                    return const Color(0xFFECECEC);
                   },
                 ),
                 // iconColor: iconColor,
@@ -115,27 +136,11 @@ class MainApp extends StatelessWidget {
                 // splashFactory: splashFactory,
                 // surfaceTintColor: surfaceTintColor,
                 // tapTargetSize: tapTargetSize,
-                textStyle: MaterialStateProperty.resolveWith(
-                  (Set<MaterialState> states) {
-                    if (states.contains(MaterialState.pressed)) {
-                      return const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                      );
-                    }
-
-                    if (states.contains(MaterialState.disabled)) {
-                      return const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                      );
-                    }
-
-                    return const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                    );
-                  },
+                textStyle: const MaterialStatePropertyAll(
+                  TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
                 // visualDensity: visualDensity,
               ),
@@ -334,7 +339,7 @@ class MainApp extends StatelessWidget {
             tertiary: Color(0xFF5EDC1F),
             onTertiary: Color(0xFFDBFFC9),
             surface: Color(0xFF272727),
-            surfaceTint: Color(0xFF636262),
+            surfaceTint: Color(0xFF4F4F4E),
             onSurface: Color(0xFF9F9E9D),
             error: Color(0xFFC51010),
           ),
@@ -356,17 +361,28 @@ class MainApp extends StatelessWidget {
               // animationDuration: animationDuration,
               backgroundColor: MaterialStateColor.resolveWith(
                 (Set<MaterialState> states) {
+                  if (states.contains(MaterialState.disabled)) {
+                    // * colorScheme transparent
+                    return const Color(0x00000000);
+                  }
+
+                  if (states.contains(MaterialState.hovered)) {
+                    // * colorScheme surfaceTint
+                    return const Color(0xFF4F4F4E);
+                  }
+
+                  if (states.contains(MaterialState.focused)) {
+                    // * colorScheme primary
+                    return const Color(0xFFFCFBFC);
+                  }
+
                   if (states.contains(MaterialState.pressed)) {
                     // * colorScheme primary
                     return const Color(0xFFFCFBFC);
                   }
 
-                  if (states.contains(MaterialState.disabled)) {
-                    // * colorScheme surface
-                    return const Color(0xFF272727);
-                  }
-                  // * colorScheme primary
-                  return const Color(0xFFFCFBFC);
+                  // * colorScheme surface
+                  return const Color(0xFF272727);
                 },
               ),
               // elevation: elevation,
@@ -374,18 +390,28 @@ class MainApp extends StatelessWidget {
               // fixedSize: fixedSize,
               foregroundColor: MaterialStateProperty.resolveWith(
                 (Set<MaterialState> states) {
+                  if (states.contains(MaterialState.disabled)) {
+                    // * colorScheme surfaceTint
+                    return const Color(0xFF4F4F4E);
+                  }
+
+                  if (states.contains(MaterialState.hovered)) {
+                    // * colorScheme onSurface
+                    return const Color(0xFF9F9E9D);
+                  }
+
+                  if (states.contains(MaterialState.focused)) {
+                    // * colorScheme onPrimary
+                    return const Color(0xFF050301);
+                  }
+
                   if (states.contains(MaterialState.pressed)) {
                     // * colorScheme onPrimary
                     return const Color(0xFF050301);
                   }
 
-                  if (states.contains(MaterialState.disabled)) {
-                    // * colorScheme onSurface
-                    return const Color(0xFF9F9E9D).withOpacity(0.3);
-                  }
-
-                  // * colorScheme onPrimary
-                  return const Color(0xFF050301);
+                  // * colorScheme onSurface
+                  return const Color(0xFF9F9E9D);
                 },
               ),
               // iconColor: iconColor,
@@ -407,27 +433,11 @@ class MainApp extends StatelessWidget {
               // splashFactory: splashFactory,
               // surfaceTintColor: surfaceTintColor,
               // tapTargetSize: tapTargetSize,
-              textStyle: MaterialStateProperty.resolveWith(
-                (Set<MaterialState> states) {
-                  if (states.contains(MaterialState.pressed)) {
-                    return const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                    );
-                  }
-
-                  if (states.contains(MaterialState.disabled)) {
-                    return const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                    );
-                  }
-
-                  return const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                  );
-                },
+              textStyle: const MaterialStatePropertyAll(
+                TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
               // visualDensity: visualDensity,
             ),
@@ -581,7 +591,7 @@ class MainApp extends StatelessWidget {
           ),
           // progressIndicatorTheme: progressIndicatorTheme,
           // radioTheme: radioTheme,
-          scaffoldBackgroundColor: const Color(0xFF0F0F0F),
+          scaffoldBackgroundColor: const Color(0xFF050301),
           // scrollbarTheme: scrollbarTheme,
           // secondaryHeaderColor: secondaryHeaderColor,
           // segmentedButtonTheme: segmentedButtonTheme,
@@ -643,7 +653,7 @@ class NormalLayout extends StatelessWidget {
             // OutlineMediumBox(),
             // NormalBoxWithImage(),
             FilledButton(
-              onPressed: null,
+              onPressed: () {},
               child: const Text(
                 "START THE CONNECTION",
               ),
