@@ -1,11 +1,4 @@
-import 'dart:ui';
-
-import 'package:commu_app/status.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/services/text_formatter.dart';
-import 'package:flutter/src/gestures/recognizer.dart';
-
-import 'boxs.dart';
 
 void main() {
   runApp(const MainApp());
@@ -65,7 +58,7 @@ class MainApp extends StatelessWidget {
               backgroundColor: MaterialStateColor.resolveWith(
                 (Set<MaterialState> states) {
                   if (states.contains(MaterialState.disabled)) {
-                    // * colorScheme onSurface
+                    // * colorScheme surface
                     return const Color(0xFFECECEC);
                   }
 
@@ -100,7 +93,7 @@ class MainApp extends StatelessWidget {
 
                   if (states.contains(MaterialState.hovered)) {
                     // * colorScheme onSurface
-                    return const Color(0xFFECECEC);
+                    return const Color(0xFFB6B5B4);
                   }
 
                   if (states.contains(MaterialState.focused)) {
@@ -120,9 +113,7 @@ class MainApp extends StatelessWidget {
               // iconColor: iconColor,
               iconSize: const MaterialStatePropertyAll(36.0),
               // maximumSize: maximumSize,
-              minimumSize: const MaterialStatePropertyAll(
-                Size(314, 56),
-              ),
+              minimumSize: const MaterialStatePropertyAll(Size(314.0, 56.0)),
               // mouseCursor: mouseCursor,
               // overlayColor: overlayColor,
               padding: const MaterialStatePropertyAll(
@@ -192,6 +183,7 @@ class MainApp extends StatelessWidget {
               color: Color(0xFFC51010),
               fontWeight: FontWeight.w400,
             ),
+            // * colorScheme onPrimary
             fillColor: const Color(0xFFFCFBFC),
             filled: true,
             // floatingLabelAlignment: floatingLabelAlignment,
@@ -256,41 +248,49 @@ class MainApp extends StatelessWidget {
           // primaryIconTheme: primaryIconTheme,
           primaryTextTheme: const TextTheme(
             titleMedium: TextStyle(
+              // * colorScheme primary
               color: Color(0xFF050301),
               fontSize: 24.0,
               fontWeight: FontWeight.w500,
             ),
             titleSmall: TextStyle(
+              // * colorScheme primary
               color: Color(0xFF050301),
               fontSize: 20.0,
               fontWeight: FontWeight.w500,
             ),
             bodyLarge: TextStyle(
+              // * colorScheme primary
               color: Color(0xFF050301),
               fontSize: 18.0,
               fontWeight: FontWeight.w500,
             ),
             bodyMedium: TextStyle(
+              // * colorScheme primary
               color: Color(0xFF050301),
               fontSize: 16.0,
               fontWeight: FontWeight.w500,
             ),
             bodySmall: TextStyle(
+              // * colorScheme primary
               color: Color(0xFF050301),
               fontSize: 14.0,
               fontWeight: FontWeight.w500,
             ),
             labelLarge: TextStyle(
+              // * colorScheme primary
               color: Color(0xFFB6B5B4),
               fontSize: 18.0,
               fontWeight: FontWeight.w400,
             ),
             labelMedium: TextStyle(
+              // * colorScheme onSurface
               color: Color(0xFFB6B5B4),
               fontSize: 16.0,
               fontWeight: FontWeight.w400,
             ),
             labelSmall: TextStyle(
+              // * colorScheme onSurface
               color: Color(0xFFB6B5B4),
               fontSize: 14.0,
               fontWeight: FontWeight.w400,
@@ -298,6 +298,7 @@ class MainApp extends StatelessWidget {
           ),
           // progressIndicatorTheme: progressIndicatorTheme,
           // radioTheme: radioTheme,
+          // * colorScheme onPrimary
           scaffoldBackgroundColor: const Color(0xFFFCFBFC),
           // scrollbarTheme: scrollbarTheme,
           // secondaryHeaderColor: secondaryHeaderColor,
@@ -347,9 +348,7 @@ class MainApp extends StatelessWidget {
               // iconColor: iconColor,
               // iconSize: iconSize,
               // maximumSize: maximumSize,
-              minimumSize: const MaterialStatePropertyAll(
-                Size(314, 56),
-              ),
+              minimumSize: const MaterialStatePropertyAll(Size(314.0, 56.0)),
               // mouseCursor: mouseCursor,
               overlayColor: const MaterialStatePropertyAll(Color(0x00000000)),
               // padding: padding,
@@ -430,8 +429,8 @@ class MainApp extends StatelessWidget {
               backgroundColor: MaterialStateColor.resolveWith(
                 (Set<MaterialState> states) {
                   if (states.contains(MaterialState.disabled)) {
-                    // * colorScheme onSurface
-                    return const Color(0xFF4F4F4E);
+                    // * colorScheme surface
+                    return const Color(0xFF272727);
                   }
 
                   if (states.contains(MaterialState.hovered)) {
@@ -620,47 +619,56 @@ class MainApp extends StatelessWidget {
           primaryTextTheme: const TextTheme(
             titleMedium: TextStyle(
               fontSize: 24.0,
+              // * colorScheme primary
               color: Color(0xFFFCFBFC),
               fontWeight: FontWeight.w500,
             ),
             titleSmall: TextStyle(
               fontSize: 20.0,
+              // * colorScheme primary
               color: Color(0xFFFCFBFC),
               fontWeight: FontWeight.w500,
             ),
             bodyLarge: TextStyle(
               fontSize: 18.0,
+              // * colorScheme primary
               color: Color(0xFFFCFBFC),
               fontWeight: FontWeight.w500,
             ),
             bodyMedium: TextStyle(
               fontSize: 16.0,
+              // * colorScheme primary
               color: Color(0xFFFCFBFC),
               fontWeight: FontWeight.w500,
             ),
             bodySmall: TextStyle(
               fontSize: 14.0,
+              // * colorScheme primary
               color: Color(0xFFFCFBFC),
               fontWeight: FontWeight.w500,
             ),
             labelLarge: TextStyle(
               fontSize: 18.0,
+              // * colorScheme onSurface
               color: Color(0xFF9F9E9D),
               fontWeight: FontWeight.w400,
             ),
             labelMedium: TextStyle(
               fontSize: 16.0,
+              // * colorScheme onSurface
               color: Color(0xFF9F9E9D),
               fontWeight: FontWeight.w400,
             ),
             labelSmall: TextStyle(
               fontSize: 14.0,
+              // * colorScheme onSurface
               color: Color(0xFF9F9E9D),
               fontWeight: FontWeight.w400,
             ),
           ),
           // progressIndicatorTheme: progressIndicatorTheme,
           // radioTheme: radioTheme,
+          // * colorScheme onPrimary
           scaffoldBackgroundColor: const Color(0xFF050301),
           // scrollbarTheme: scrollbarTheme,
           // secondaryHeaderColor: secondaryHeaderColor,
@@ -704,7 +712,7 @@ class MainApp extends StatelessWidget {
                   }
 
                   // * colorScheme onSurface
-                  return const Color(0xFFB6B5B4);
+                  return const Color(0xFF9F9E9D);
                 },
               ),
               // iconColor: iconColor,
@@ -789,13 +797,10 @@ class NormalLayout extends StatelessWidget {
             FilledButton(
               autofocus: false,
               onPressed: () {},
-              child: Row(
-                children: const [
-
+              child: Row(children: const [
                 Icon(Icons.add),
                 Expanded(child: Center(child: Text("ADD NEW DEVICE")))
-                ]
-              ),
+              ]),
 
               // child: const Text(
               //   "START THE CONNECTION",
@@ -806,7 +811,7 @@ class NormalLayout extends StatelessWidget {
             ),
             TextButton(
               autofocus: false,
-              onPressed: () {},
+              onPressed: (){},
               child: const Text(
                 "CANCAL",
               ),
