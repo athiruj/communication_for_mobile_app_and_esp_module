@@ -295,7 +295,6 @@ class NormalBoxWithTextfield extends StatelessWidget {
 
   final StatusBar? statusBar;
 
-
   const NormalBoxWithTextfield({
     super.key,
     this.displayText,
@@ -371,7 +370,7 @@ class NormalBoxWithTextfield extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                      onPressed: (){},
+                      onPressed: () {},
                       child: const Text(
                         "BUTTON",
                       ),
@@ -479,7 +478,7 @@ class OutlineBoxWithTextfield extends StatelessWidget {
               ),
             ),
             TextButton(
-              onPressed: (){},
+              onPressed: () {},
               child: const Text(
                 "BUTTON",
               ),

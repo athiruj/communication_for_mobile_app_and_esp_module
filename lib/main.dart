@@ -56,7 +56,7 @@ class MainApp extends StatelessWidget {
           filledButtonTheme: FilledButtonThemeData(
             style: ButtonStyle(
               alignment: Alignment.center,
-              animationDuration: const Duration(milliseconds: 50),
+              animationDuration: const Duration(milliseconds: 10),
               backgroundColor: MaterialStateColor.resolveWith(
                 (Set<MaterialState> states) {
                   if (states.contains(MaterialState.disabled)) {
@@ -315,7 +315,7 @@ class MainApp extends StatelessWidget {
           textButtonTheme: TextButtonThemeData(
             style: ButtonStyle(
               alignment: Alignment.center,
-              animationDuration: const Duration(milliseconds: 50),
+              animationDuration: const Duration(milliseconds: 10),
               backgroundColor:
                   const MaterialStatePropertyAll(Color(0x00000000)),
               // elevation: elevation,
@@ -369,7 +369,7 @@ class MainApp extends StatelessWidget {
               textStyle: const MaterialStatePropertyAll(
                 TextStyle(
                   fontSize: 20.0,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
               // visualDensity: visualDensity,
@@ -427,7 +427,7 @@ class MainApp extends StatelessWidget {
           filledButtonTheme: FilledButtonThemeData(
             style: ButtonStyle(
               alignment: Alignment.center,
-              animationDuration: const Duration(milliseconds: 50),
+              animationDuration: const Duration(milliseconds: 10),
               backgroundColor: MaterialStateColor.resolveWith(
                 (Set<MaterialState> states) {
                   if (states.contains(MaterialState.disabled)) {
@@ -685,7 +685,7 @@ class MainApp extends StatelessWidget {
           textButtonTheme: TextButtonThemeData(
             style: ButtonStyle(
               alignment: Alignment.center,
-              animationDuration: const Duration(milliseconds: 50),
+              animationDuration: const Duration(milliseconds: 10),
               backgroundColor:
                   const MaterialStatePropertyAll(Color(0x00000000)),
               // elevation: elevation,
@@ -791,6 +791,73 @@ class NormalLayout extends StatelessWidget {
           // mainAxisAlignment: MainAxisAlignment.center,
           // crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            Container(
+              height: 50,
+              width: 50,
+              color: Theme.of(context).primaryColor,
+            ),
+            Container(
+              height: 50,
+              width: 50,
+              color: Theme.of(context).colorScheme.onPrimary,
+            ),
+            Container(
+              height: 50,
+              width: 50,
+              color: Theme.of(context).colorScheme.secondary,
+            ),
+            Container(
+              height: 50,
+              width: 50,
+              color: Theme.of(context).colorScheme.tertiary,
+            ),
+            Container(
+              height: 50,
+              width: 50,
+              color: Theme.of(context).colorScheme.surface,
+            ),
+            Container(
+              height: 50,
+              width: 50,
+              color: Theme.of(context).colorScheme.surfaceTint,
+            ),
+            Container(
+              height: 50,
+              width: 50,
+              color: Theme.of(context).colorScheme.onSurface,
+            ),
+            Text(
+              "Title Medium",
+              style: Theme.of(context).primaryTextTheme.titleMedium,
+            ),
+            Text(
+              "Title Small",
+              style: Theme.of(context).primaryTextTheme.titleSmall,
+            ),
+            Text(
+              "Body Large",
+              style: Theme.of(context).primaryTextTheme.bodyLarge,
+            ),
+            Text(
+              "Body Medium",
+              style: Theme.of(context).primaryTextTheme.bodyMedium,
+            ),
+            Text(
+              "Body Small",
+              style: Theme.of(context).primaryTextTheme.bodySmall,
+            ),
+            Text(
+              "Label Large",
+              style: Theme.of(context).primaryTextTheme.labelLarge,
+            ),
+            Text(
+              "Label Medium",
+              style: Theme.of(context).primaryTextTheme.labelMedium,
+            ),
+            Text(
+              "Label Small",
+              style: Theme.of(context).primaryTextTheme.labelSmall,
+            ),
             const NormalBox(),
             const SizedBox(
               height: 20.0,
@@ -823,7 +890,7 @@ class NormalLayout extends StatelessWidget {
               height: 20.0,
             ),
             FilledButton(
-              autofocus: true,
+              autofocus: false,
               onPressed: () {},
               child: Row(children: const [
                 Icon(Icons.add),
