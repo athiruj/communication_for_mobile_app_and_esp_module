@@ -22,17 +22,17 @@ class NormalBox extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.only(
-        bottom: 12,
-        left: 52,
-        right: 32,
-        top: 12,
+        bottom: 12.0,
+        left: 52.0,
+        right: 32.0,
+        top: 12.0,
       ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(20.0),
         color: colorScheme.surface,
       ),
       constraints: const BoxConstraints.expand(
-        height: 136,
+        height: 136.0,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -40,8 +40,8 @@ class NormalBox extends StatelessWidget {
         children: [
           Container(
             color: Colors.amber,
-            height: 52,
-            width: 52,
+            height: 52.0,
+            width: 52.0,
           ),
           Text(
             displayText ?? "Dispaly",
@@ -77,17 +77,17 @@ class MediumBox extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.only(
-        bottom: 12,
-        left: 20,
-        right: 32,
-        top: 12,
+        bottom: 12.0,
+        left: 20.0,
+        right: 32.0,
+        top: 12.0,
       ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(20.0),
         color: colorScheme.surface,
       ),
       constraints: const BoxConstraints.expand(
-        height: 80,
+        height: 80.0,
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -95,8 +95,8 @@ class MediumBox extends StatelessWidget {
         children: [
           Container(
             color: Colors.amber,
-            height: 52,
-            width: 52,
+            height: 52.0,
+            width: 52.0,
           ),
           Text(
             displayText ?? "Dispaly",
@@ -139,13 +139,13 @@ class OutlineBox extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         border: Border.all(
-          width: 2,
+          width: 2.0,
           color: colorScheme.surface,
         ),
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(20.0),
       ),
       constraints: const BoxConstraints.expand(
-        height: 136,
+        height: 136.0,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -153,8 +153,8 @@ class OutlineBox extends StatelessWidget {
         children: [
           Container(
             color: Colors.amber,
-            height: 52,
-            width: 52,
+            height: 52.0,
+            width: 52.0,
           ),
           Text(
             displayText ?? "Dispaly",
@@ -190,20 +190,20 @@ class OutlineMediumBox extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.only(
-        bottom: 8,
-        left: 18,
-        right: 30,
-        top: 8,
+        bottom: 8.0,
+        left: 18.0,
+        right: 30.0,
+        top: 8.0,
       ),
       decoration: BoxDecoration(
         border: Border.all(
-          width: 2,
+          width: 2.0,
           color: colorScheme.surface,
         ),
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(20.0),
       ),
       constraints: const BoxConstraints.expand(
-        height: 80,
+        height: 80.0,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -211,8 +211,8 @@ class OutlineMediumBox extends StatelessWidget {
         children: [
           Container(
             color: Colors.amber,
-            height: 52,
-            width: 52,
+            height: 52.0,
+            width: 52.0,
           ),
           Text(
             displayText ?? "Dispaly",
@@ -248,17 +248,17 @@ class NormalBoxWithImage extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.only(
-        bottom: 8,
-        left: 8,
-        right: 32,
-        top: 8,
+        bottom: 8.0,
+        left: 8.0,
+        right: 32.0,
+        top: 8.0,
       ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(20.0),
         color: colorScheme.surface,
       ),
       constraints: const BoxConstraints.expand(
-        height: 136,
+        height: 136.0,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -267,10 +267,10 @@ class NormalBoxWithImage extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               color: colorScheme.onPrimary,
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(20.0),
             ),
-            height: 120,
-            width: 120,
+            height: 120.0,
+            width: 120.0,
           ),
           Text(
             displayText ?? "Dispaly",
@@ -279,7 +279,7 @@ class NormalBoxWithImage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8),
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: statusBar ?? const StatusBar(),
           )
         ],
@@ -309,13 +309,13 @@ class NormalBoxWithTextfield extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.only(
-        bottom: 12,
-        left: 20,
-        right: 32,
-        top: 12,
+        bottom: 12.0,
+        left: 20.0,
+        right: 32.0,
+        top: 12.0,
       ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(20.0),
         color: colorScheme.surface,
       ),
       child: IntrinsicHeight(
@@ -329,7 +329,7 @@ class NormalBoxWithTextfield extends StatelessWidget {
                 child: Column(
                   children: [
                     Container(
-                      height: 104,
+                      height: 104.0,
                       padding: const EdgeInsets.only(
                         left: 32.0,
                       ),
@@ -337,8 +337,8 @@ class NormalBoxWithTextfield extends StatelessWidget {
                         children: [
                           Container(
                             color: Colors.amber,
-                            height: 52,
-                            width: 52,
+                            height: 52.0,
+                            width: 52.0,
                           ),
                           const SizedBox(
                             width: 20.0,
@@ -362,7 +362,7 @@ class NormalBoxWithTextfield extends StatelessWidget {
                     ),
                     TextField(
                       decoration: const InputDecoration(
-                        constraints: BoxConstraints(minHeight: 73),
+                        constraints: BoxConstraints(minHeight: 73.0),
                         labelText: "Password",
                       ),
                       style: textTheme.titleSmall?.copyWith(
@@ -411,14 +411,14 @@ class OutlineBoxWithTextfield extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.only(
-        bottom: 12,
-        left: 18,
-        right: 18,
-        top: 12,
+        bottom: 12.0,
+        left: 18.0,
+        right: 18.0,
+        top: 12.0,
       ),
       decoration: BoxDecoration(
         border: Border.all(
-          width: 2,
+          width: 2.0,
           color: colorScheme.surface,
         ),
         borderRadius: BorderRadius.circular(20),
@@ -432,8 +432,8 @@ class OutlineBoxWithTextfield extends StatelessWidget {
               children: [
                 Container(
                   color: Colors.amber,
-                  height: 52,
-                  width: 52,
+                  height: 52.0,
+                  width: 52.0,
                 ),
                 const SizedBox(
                   width: 20.0,
@@ -459,7 +459,7 @@ class OutlineBoxWithTextfield extends StatelessWidget {
             ),
             TextField(
               decoration: InputDecoration(
-                constraints: const BoxConstraints(minHeight: 73),
+                constraints: const BoxConstraints(minHeight: 73.0),
                 fillColor: colorScheme.surface,
                 labelText: "Password",
               ),
@@ -469,7 +469,7 @@ class OutlineBoxWithTextfield extends StatelessWidget {
             ),
             TextField(
               decoration: InputDecoration(
-                constraints: const BoxConstraints(minHeight: 73),
+                constraints: const BoxConstraints(minHeight: 73.0),
                 fillColor: colorScheme.surface,
                 labelText: "Password",
               ),
