@@ -21,15 +21,20 @@ class StatusBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     return Container(
-      constraints:
-          BoxConstraints.expand(width: width ?? 6.0, height: height ?? 6.0),
+      constraints: BoxConstraints(
+        minHeight: 6.0,
+        minWidth: 6.0,
+        maxHeight: height ?? 6.0,
+        maxWidth: width ?? 6.0,
+      ),
       decoration: BoxDecoration(
         color: color ?? colorScheme.surfaceTint,
-        shape: BoxShape.circle,
-        // borderRadius: BorderRadius.circular(3),
+        // shape: BoxShape.circle,
+        borderRadius: BorderRadius.circular(3),
       ),
     );
   }

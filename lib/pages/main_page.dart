@@ -12,13 +12,21 @@ class NormalLayout extends StatelessWidget {
         padding: const EdgeInsets.symmetric(
           horizontal: 16.0,
         ),
-        child: Column(
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: const [
+          // crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
             IconBox(
-              icon: Icon(Icons.bluetooth),
-            )
+              icon: Icons.bluetooth,
+              onTap: (){},
+            ),
+            const SizedBox(
+            width: 16.0,),
+            IconBox(
+              icon: Icons.bluetooth,
+              onTap: (){},
+            ),
             // FilledButton(
             //   autofocus: false,
             //   onPressed: () {},

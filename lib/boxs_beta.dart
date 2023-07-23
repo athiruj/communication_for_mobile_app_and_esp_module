@@ -1,32 +1,65 @@
 import 'package:commu_app/status.dart';
 import 'package:flutter/material.dart';
 
-class IconBox extends StatelessWidget {
-  final Icon icon;
+class IconBox extends StatefulWidget {
+  final IconData icon;
+
+  final double? iconSize;
+
+  final Color? iconColor;
+
   final StatusBar? statusBar;
 
-  const IconBox({super.key, required this.icon, this.statusBar});
+  void Function()? onTap;
+
+  IconBox({
+    super.key,
+    required this.icon,
+    this.iconSize,
+    this.iconColor,
+    this.statusBar,
+    required this.onTap,
+  });
+
+  @override
+  State<IconBox> createState() => _IconBoxState();
+}
+
+class _IconBoxState extends State<IconBox> {
+  bool click = false;
 
   @override
   Widget build(BuildContext context) {
     ColorScheme colorScheme = Theme.of(context).colorScheme;
     return GestureDetector(
+      onTap: widget.onTap,
       child: Container(
-        color: colorScheme.surface,
-        constraints: const BoxConstraints(
-          maxWidth: double.infinity,
-          maxHeight: 136.0,
-          minWidth: 136.0,
-          minHeight: 136.0,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: colorScheme.surface,
         ),
+        padding: const EdgeInsets.only(
+          bottom: 12.0,
+          left: 16.0,
+          right: 16.0,
+          top: 42.0,
+        ),
+        constraints: const BoxConstraints(
+            maxHeight: 136.0,
+            maxWidth: 136.0,
+            minHeight: 136.0,
+            minWidth: 136.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            icon,
-            statusBar ??
-                const StatusBar(
-                  width: double.infinity,
-                ),
+            Icon(
+              widget.icon,
+              size: widget.iconSize ?? 52,
+              color: widget.iconColor ?? colorScheme.onSurface,
+            ),
+            const StatusBar(
+              width: double.infinity,
+            )
           ],
         ),
       ),
