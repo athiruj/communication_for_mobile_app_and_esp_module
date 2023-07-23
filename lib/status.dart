@@ -6,18 +6,30 @@ import 'package:flutter/material.dart';
 /// * StatusBar.green()
 /// * StatusBar.none()
 class StatusBar extends StatelessWidget {
-  final int width = 6;
+
+  final double? width;
+  
   final double? height;
+  
   final Color? color;
-  const StatusBar({super.key, this.color, this.height});
+  
+  const StatusBar({
+    super.key,
+    this.color,
+    this.width,
+    this.height,
+  });
 
   @override
   Widget build(BuildContext context) {
+    ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Container(
-      constraints: BoxConstraints.expand(width: 6,height: height),
+      constraints:
+          BoxConstraints.expand(width: width ?? 6.0, height: height ?? 6.0),
       decoration: BoxDecoration(
-        color: color ?? Theme.of(context).colorScheme.surfaceTint,
-        borderRadius: BorderRadius.circular(3),
+        color: color ?? colorScheme.surfaceTint,
+        shape: BoxShape.circle,
+        // borderRadius: BorderRadius.circular(3),
       ),
     );
   }

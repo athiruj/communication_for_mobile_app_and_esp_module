@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'boxs.dart';
-import 'pages/homepage.dart';
+import 'boxs_beta.dart';
+import 'pages/main_page.dart';
 
 void main() {
   runApp(const MainApp());
