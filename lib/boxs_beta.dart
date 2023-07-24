@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:commu_app/status.dart';
 import 'package:flutter/material.dart';
 
@@ -46,7 +48,7 @@ class _IconBoxState extends State<IconBox> {
         ),
         constraints: const BoxConstraints(
             maxHeight: 136.0,
-            maxWidth: 136.0,
+            maxWidth: 440.0,
             minHeight: 136.0,
             minWidth: 136.0),
         child: Column(

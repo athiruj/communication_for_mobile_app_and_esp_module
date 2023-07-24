@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'boxs_beta.dart';
+// import 'boxs_beta.dart';
 import 'pages/main_page.dart';
 
 void main() {
@@ -392,7 +392,56 @@ class MainApp extends StatelessWidget {
             ),
           ),
           // textSelectionTheme: textSelectionTheme,
-          // textTheme: textTheme,
+          textTheme:  TextTheme(
+            titleMedium: TextStyle(
+              // * colorScheme primary
+              color: colorSchemeLight.primary,
+              fontSize: 24.0,
+              fontWeight: FontWeight.w500,
+            ),
+            titleSmall: TextStyle(
+              // * colorScheme primary
+              color: colorSchemeLight.primary,
+              fontSize: 20.0,
+              fontWeight: FontWeight.w500,
+            ),
+            bodyLarge: TextStyle(
+              // * colorScheme primary
+              color: colorSchemeLight.primary,
+              fontSize: 18.0,
+              fontWeight: FontWeight.w500,
+            ),
+            bodyMedium: TextStyle(
+              // * colorScheme primary
+              color: colorSchemeLight.primary,
+              fontSize: 16.0,
+              fontWeight: FontWeight.w500,
+            ),
+            bodySmall: TextStyle(
+              // * colorScheme primary
+              color: colorSchemeLight.primary,
+              fontSize: 14.0,
+              fontWeight: FontWeight.w500,
+            ),
+            labelLarge: TextStyle(
+              // * colorScheme onSurface
+              color: colorSchemeLight.onSurface,
+              fontSize: 18.0,
+              fontWeight: FontWeight.w400,
+            ),
+            labelMedium: TextStyle(
+              // * colorScheme onSurface
+              color: colorSchemeLight.onSurface,
+              fontSize: 16.0,
+              fontWeight: FontWeight.w400,
+            ),
+            labelSmall: TextStyle(
+              // * colorScheme onSurface
+              color: colorSchemeLight.onSurface,
+              fontSize: 14.0,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
           // timePickerTheme: timePickerTheme,
           // toggleButtonsTheme: toggleButtonsTheme,
           // tooltipTheme: tooltipTheme
@@ -753,7 +802,56 @@ class MainApp extends StatelessWidget {
             ),
           ),
           // textSelectionTheme: textSelectionTheme,
-          // textTheme: textTheme,
+          textTheme: TextTheme(
+            titleMedium: TextStyle(
+              fontSize: 24.0,
+              // * colorScheme primary
+              color: colorSchemeDark.primary,
+              fontWeight: FontWeight.w500,
+            ),
+            titleSmall: TextStyle(
+              fontSize: 20.0,
+              // * colorScheme primary
+              color: colorSchemeDark.primary,
+              fontWeight: FontWeight.w500,
+            ),
+            bodyLarge: TextStyle(
+              fontSize: 18.0,
+              // * colorScheme primary
+              color: colorSchemeDark.primary,
+              fontWeight: FontWeight.w500,
+            ),
+            bodyMedium: TextStyle(
+              fontSize: 16.0,
+              // * colorScheme primary
+              color: colorSchemeDark.primary,
+              fontWeight: FontWeight.w500,
+            ),
+            bodySmall: TextStyle(
+              fontSize: 14.0,
+              // * colorScheme primary
+              color: colorSchemeDark.primary,
+              fontWeight: FontWeight.w500,
+            ),
+            labelLarge: TextStyle(
+              fontSize: 18.0,
+              // * colorScheme onSurface
+              color: colorSchemeDark.onSurface,
+              fontWeight: FontWeight.w400,
+            ),
+            labelMedium: TextStyle(
+              fontSize: 16.0,
+              // * colorScheme onSurface
+              color: colorSchemeDark.onSurface,
+              fontWeight: FontWeight.w400,
+            ),
+            labelSmall: TextStyle(
+              fontSize: 14.0,
+              // * colorScheme onSurface
+              color: colorSchemeDark.onSurface,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
           // timePickerTheme: timePickerTheme,
           // toggleButtonsTheme: toggleButtonsTheme,
           // tooltipTheme: tooltipTheme
@@ -776,7 +874,8 @@ class LayoutBase extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(body: LayoutBuilder(
         builder: ((BuildContext context, BoxConstraints constraints) {
-      return const NormalLayout();
+      return const TestPage();
+      // return const NormalLayout();
     })));
   }
 }
