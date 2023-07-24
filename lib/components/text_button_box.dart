@@ -1,30 +1,31 @@
 import 'package:flutter/material.dart';
 
-class FilledButtonBox extends ButtonStyleButton {
-  const FilledButtonBox({
-    super.key,
-    super.autofocus = false,
+class TextButtonBox extends ButtonStyleButton {
+  const TextButtonBox({
     required super.child,
+    required super.onPressed,
+    super.autofocus = false,
     super.focusNode,
+    super.key,
     super.onFocusChange,
     super.onHover,
     super.onLongPress,
-    required super.onPressed,
-  }) : super(clipBehavior: Clip.none, style: null);
+  }) : super(
+          clipBehavior: Clip.none,
+          style: null,
+        );
 
   @override
   ButtonStyle defaultStyleOf(BuildContext context) {
-    return _FilledButtonBoxDefaults(context);
+    return _TextButtonBoxDefaults(context);
   }
 
   @override
-  ButtonStyle? themeStyleOf(BuildContext context) {
-    return null;
-  }
+  ButtonStyle? themeStyleOf(BuildContext context) => null;
 }
 
-class _FilledButtonBoxDefaults extends ButtonStyle {
-  _FilledButtonBoxDefaults(this.context)
+class _TextButtonBoxDefaults extends ButtonStyle {
+  _TextButtonBoxDefaults(this.context)
       : super(
           animationDuration: kThemeChangeDuration,
           enableFeedback: true,
@@ -38,22 +39,12 @@ class _FilledButtonBoxDefaults extends ButtonStyle {
   @override
   MaterialStateProperty<TextStyle?> get textStyle =>
       MaterialStatePropertyAll<TextStyle?>(
-        Theme.of(context).textTheme.labelLarge,
+        Theme.of(context).textTheme.bodyLarge,
       );
 
   @override
   MaterialStateProperty<Color?>? get backgroundColor =>
-      MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-        if (states.contains(MaterialState.disabled)) {
-          return _colors.surface.withOpacity(0.38);
-        }
-
-        if (states.contains(MaterialState.focused)) {
-          return _colors.primary;
-        }
-
-        return _colors.surface;
-      });
+      const MaterialStatePropertyAll<Color>(Color(0x00000000));
 
   @override
   MaterialStateProperty<Color?>? get foregroundColor =>
@@ -63,7 +54,7 @@ class _FilledButtonBoxDefaults extends ButtonStyle {
         }
 
         if (states.contains(MaterialState.focused)) {
-          return _colors.onPrimary;
+          return _colors.primary;
         }
 
         return _colors.onSurface;
@@ -71,7 +62,7 @@ class _FilledButtonBoxDefaults extends ButtonStyle {
 
   @override
   MaterialStateProperty<Color?>? get overlayColor =>
-      MaterialStatePropertyAll<Color>(_colors.primary);
+      const MaterialStatePropertyAll<Color>(Color(0x00000000));
 
   @override
   MaterialStateProperty<Color>? get shadowColor =>
@@ -88,7 +79,7 @@ class _FilledButtonBoxDefaults extends ButtonStyle {
   @override
   MaterialStateProperty<EdgeInsetsGeometry>? get padding =>
       const MaterialStatePropertyAll<EdgeInsetsGeometry>(
-        EdgeInsets.symmetric(horizontal: 16.0),
+        EdgeInsets.zero,
       );
 
   @override
@@ -101,13 +92,7 @@ class _FilledButtonBoxDefaults extends ButtonStyle {
 
   @override
   MaterialStateProperty<OutlinedBorder>? get shape =>
-      const MaterialStatePropertyAll<OutlinedBorder>(
-        RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(12.0),
-          ),
-        ),
-      );
+      const MaterialStatePropertyAll<OutlinedBorder>(StadiumBorder());
 
   @override
   MaterialStateProperty<MouseCursor?>? get mouseCursor =>

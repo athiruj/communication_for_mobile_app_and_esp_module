@@ -1,6 +1,8 @@
 // import 'package:commu_app/boxs_beta.dart';
-import 'package:commu_app/filled_button_box.dart';
+import 'package:commu_app/components/filled_button_box.dart';
 import 'package:flutter/material.dart';
+
+import '../components/text_button_box.dart';
 
 // class NormalLayout extends StatelessWidget {
 //   const NormalLayout({
@@ -160,11 +162,11 @@ class TestPage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          FilledButtonBox(
+          TextButtonBox(
             onPressed: (){},
             child: const Text("FilledButtonBox"),
           ),
-          FilledButtonBox(
+          TextButtonBox(
             onPressed: null,
             child: const Text("FilledButtonBox"),
           ),
