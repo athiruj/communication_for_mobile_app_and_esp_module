@@ -27,7 +27,7 @@ class TextButtonBox extends ButtonStyleButton {
 class _TextButtonBoxDefaults extends ButtonStyle {
   _TextButtonBoxDefaults(this.context)
       : super(
-          animationDuration: kThemeChangeDuration,
+          animationDuration: Duration.zero,
           enableFeedback: true,
           alignment: Alignment.center,
         );
@@ -44,8 +44,17 @@ class _TextButtonBoxDefaults extends ButtonStyle {
 
   @override
   MaterialStateProperty<Color?>? get backgroundColor =>
-      const MaterialStatePropertyAll<Color>(Color(0x00000000));
+      MaterialStateProperty.resolveWith((Set<MaterialState> states) {
+        if (states.contains(MaterialState.disabled)) {
+          return const Color(0x00000000);
+        }
 
+        if (states.contains(MaterialState.focused)) {
+          return _colors.primary;
+        }
+
+        return const Color(0x00000000);
+      });
   @override
   MaterialStateProperty<Color?>? get foregroundColor =>
       MaterialStateProperty.resolveWith((Set<MaterialState> states) {
@@ -53,11 +62,15 @@ class _TextButtonBoxDefaults extends ButtonStyle {
           return _colors.surfaceTint;
         }
 
-        if (states.contains(MaterialState.focused)) {
+        if (states.contains(MaterialState.pressed)) {
           return _colors.primary;
         }
 
-        return _colors.onSurface;
+        if (states.contains(MaterialState.focused)) {
+          return _colors.onPrimary;
+        }
+
+        return _colors.primary;
       });
 
   @override
@@ -66,7 +79,7 @@ class _TextButtonBoxDefaults extends ButtonStyle {
 
   @override
   MaterialStateProperty<Color>? get shadowColor =>
-      const MaterialStatePropertyAll<Color>(Color(0x00000000));
+      const MaterialStatePropertyAll<Color>(Color(0xff000000));
 
   @override
   MaterialStateProperty<Color>? get surfaceTintColor =>
@@ -92,7 +105,13 @@ class _TextButtonBoxDefaults extends ButtonStyle {
 
   @override
   MaterialStateProperty<OutlinedBorder>? get shape =>
-      const MaterialStatePropertyAll<OutlinedBorder>(StadiumBorder());
+      const MaterialStatePropertyAll<OutlinedBorder>(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(12.0),
+          ),
+        ),
+      );
 
   @override
   MaterialStateProperty<MouseCursor?>? get mouseCursor =>

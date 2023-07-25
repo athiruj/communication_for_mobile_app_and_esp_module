@@ -28,7 +28,6 @@ class IconBox extends StatefulWidget {
 }
 
 class _IconBoxState extends State<IconBox> {
-  bool click = false;
 
   @override
   Widget build(BuildContext context) {

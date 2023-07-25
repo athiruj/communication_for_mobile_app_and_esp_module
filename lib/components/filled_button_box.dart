@@ -11,9 +11,9 @@ class FilledButtonBox extends ButtonStyleButton {
     super.onFocusChange,
     super.onHover,
     super.onLongPress,
+    super.style,
   }) : super(
           clipBehavior: Clip.none,
-          style: null,
         );
 
   @override
@@ -26,8 +26,9 @@ class FilledButtonBox extends ButtonStyleButton {
 }
 
 class _FilledButtonBoxDefaults extends ButtonStyle {
-  _FilledButtonBoxDefaults(this.context)
-      : super(
+  _FilledButtonBoxDefaults(
+    this.context,
+  ) : super(
           animationDuration: kThemeChangeDuration,
           enableFeedback: true,
           alignment: Alignment.center,
@@ -73,7 +74,7 @@ class _FilledButtonBoxDefaults extends ButtonStyle {
 
   @override
   MaterialStateProperty<Color?>? get overlayColor =>
-      MaterialStatePropertyAll<Color>(_colors.primary);
+      MaterialStatePropertyAll<Color>(_colors.surfaceTint);
 
   @override
   MaterialStateProperty<Color>? get shadowColor =>

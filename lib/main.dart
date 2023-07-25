@@ -69,95 +69,7 @@ class MainApp extends StatelessWidget {
           // elevatedButtonTheme: elevatedButtonTheme,
           // expansionTileTheme: expansionTileTheme,
           // extensions: extensions,
-          filledButtonTheme: FilledButtonThemeData(
-            style: ButtonStyle(
-              alignment: Alignment.center,
-              // animationDuration: const Duration(milliseconds: 10),
-              backgroundColor: MaterialStateColor.resolveWith(
-                (Set<MaterialState> states) {
-                  if (states.contains(MaterialState.disabled)) {
-                    // * colorScheme surface
-                    return colorSchemeLight.surface;
-                  }
-
-                  // if (states.contains(MaterialState.hovered)) {
-                  //   // * colorScheme surfaceTint
-                  //   return colorSchemeLight.surfaceTint;
-                  // }
-
-                  if (states.contains(MaterialState.focused)) {
-                    // * colorScheme primary
-                    return colorSchemeLight.primary;
-                  }
-
-                  // if (states.contains(MaterialState.pressed)) {
-                  //   // * colorScheme primary
-                  //   return colorSchemeLight.primary;
-                  // }
-
-                  // * colorScheme surface
-                  return colorSchemeLight.surface;
-                },
-              ),
-              // elevation: elevation,
-              // enableFeedback: enableFeedback,
-              // fixedSize: fixedSize,
-              foregroundColor: MaterialStateColor.resolveWith(
-                (Set<MaterialState> states) {
-                  if (states.contains(MaterialState.disabled)) {
-                    // * colorScheme surfaceTint
-                    return colorSchemeLight.surfaceTint;
-                  }
-
-                  // if (states.contains(MaterialState.hovered)) {
-                  //   // * colorScheme onSurface
-                  //   return colorSchemeLight.onSurface;
-                  // }
-
-                  if (states.contains(MaterialState.focused)) {
-                    // * colorScheme onPrimary
-                    return colorSchemeLight.onPrimary;
-                  }
-
-                  // if (states.contains(MaterialState.pressed)) {
-                  //   // * colorScheme onPrimary
-                  //   return colorSchemeLight.onPrimary;
-                  // }
-
-                  // * colorScheme onSurface
-                  return colorSchemeLight.onSurface;
-                },
-              ),
-              // iconColor: iconColor,
-              iconSize: const MaterialStatePropertyAll(36.0),
-              // maximumSize: maximumSize,
-              minimumSize: const MaterialStatePropertyAll(Size(314.0, 56.0)),
-              // mouseCursor: mouseCursor,
-              // overlayColor: overlayColor,
-              padding: const MaterialStatePropertyAll(
-                EdgeInsets.symmetric(horizontal: 32.0),
-              ),
-              // shadowColor: shadowColor,
-              shape: const MaterialStatePropertyAll(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(12.0),
-                  ),
-                ),
-              ),
-              // side: null,
-              // splashFactory: splashFactory,
-              // surfaceTintColor: surfaceTintColor,
-              // tapTargetSize: tapTargetSize,
-              textStyle: const MaterialStatePropertyAll(
-                TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              // visualDensity: visualDensity,
-            ),
-          ),
+          // filledButtonTheme: filledButtonTheme,
           // floatingActionButtonTheme: floatingActionButtonTheme,
           // focusColor: focusColor,
           fontFamily: "Poppins",
@@ -264,59 +176,9 @@ class MainApp extends StatelessWidget {
           // primaryColorDark: primaryColorDark,
           // primaryColorLight: primaryColorLight,
           // primaryIconTheme: primaryIconTheme,
-          primaryTextTheme: TextTheme(
-            titleMedium: TextStyle(
-              // * colorScheme primary
-              color: colorSchemeLight.primary,
-              fontSize: 24.0,
-              fontWeight: FontWeight.w500,
-            ),
-            titleSmall: TextStyle(
-              // * colorScheme primary
-              color: colorSchemeLight.primary,
-              fontSize: 20.0,
-              fontWeight: FontWeight.w500,
-            ),
-            bodyLarge: TextStyle(
-              // * colorScheme primary
-              color: colorSchemeLight.primary,
-              fontSize: 18.0,
-              fontWeight: FontWeight.w500,
-            ),
-            bodyMedium: TextStyle(
-              // * colorScheme primary
-              color: colorSchemeLight.primary,
-              fontSize: 16.0,
-              fontWeight: FontWeight.w500,
-            ),
-            bodySmall: TextStyle(
-              // * colorScheme primary
-              color: colorSchemeLight.primary,
-              fontSize: 14.0,
-              fontWeight: FontWeight.w500,
-            ),
-            labelLarge: TextStyle(
-              // * colorScheme onSurface
-              color: colorSchemeLight.onSurface,
-              fontSize: 18.0,
-              fontWeight: FontWeight.w400,
-            ),
-            labelMedium: TextStyle(
-              // * colorScheme onSurface
-              color: colorSchemeLight.onSurface,
-              fontSize: 16.0,
-              fontWeight: FontWeight.w400,
-            ),
-            labelSmall: TextStyle(
-              // * colorScheme onSurface
-              color: colorSchemeLight.onSurface,
-              fontSize: 14.0,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
+          // primaryTextTheme: primaryTextTheme,
           // progressIndicatorTheme: progressIndicatorTheme,
           // radioTheme: radioTheme,
-          // * colorScheme onPrimary
           scaffoldBackgroundColor: colorSchemeLight.onPrimary,
           // scrollbarTheme: scrollbarTheme,
           // secondaryHeaderColor: secondaryHeaderColor,
@@ -328,69 +190,7 @@ class MainApp extends StatelessWidget {
           // splashFactory: splashFactory,
           // switchTheme: switchTheme,
           // tabBarTheme: tabBarTheme,
-          textButtonTheme: TextButtonThemeData(
-            style: ButtonStyle(
-              alignment: Alignment.center,
-              animationDuration: const Duration(milliseconds: 10),
-              backgroundColor:
-                  const MaterialStatePropertyAll(Color(0x00000000)),
-              // elevation: elevation,
-              // enableFeedback: enableFeedback,
-              // fixedSize: fixedSize,
-              foregroundColor: MaterialStateColor.resolveWith(
-                (Set<MaterialState> states) {
-                  if (states.contains(MaterialState.disabled)) {
-                    // * colorScheme surfaceTint
-                    return colorSchemeLight.surfaceTint;
-                  }
-
-                  // if (states.contains(MaterialState.hovered)) {
-                  //   // * colorScheme Primary
-                  //   return colorSchemeLight.primary;
-                  // }
-
-                  if (states.contains(MaterialState.focused)) {
-                    // * colorScheme Primary
-                    return colorSchemeLight.primary;
-                  }
-
-                  // if (states.contains(MaterialState.pressed)) {
-                  //   // * colorScheme Primary
-                  //   return colorSchemeLight.primary;
-                  // }
-
-                  // * colorScheme onSurface
-                  return colorSchemeLight.onSurface;
-                },
-              ),
-              // iconColor: iconColor,
-              // iconSize: iconSize,
-              // maximumSize: maximumSize,
-              minimumSize: const MaterialStatePropertyAll(Size(314.0, 56.0)),
-              // mouseCursor: mouseCursor,
-              overlayColor: const MaterialStatePropertyAll(Color(0x00000000)),
-              // padding: padding,
-              // shadowColor: shadowColor,
-              shape: const MaterialStatePropertyAll(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(12.0),
-                  ),
-                ),
-              ),
-              // side: null,
-              // splashFactory: splashFactory,
-              // surfaceTintColor: surfaceTintColor,
-              // tapTargetSize: tapTargetSize,
-              textStyle: const MaterialStatePropertyAll(
-                TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              // visualDensity: visualDensity,
-            ),
-          ),
+          // textButtonTheme: textButtonTheme,
           // textSelectionTheme: textSelectionTheme,
           textTheme:  TextTheme(
             titleMedium: TextStyle(
@@ -478,95 +278,7 @@ class MainApp extends StatelessWidget {
           // elevatedButtonTheme: elevatedButtonTheme,
           // expansionTileTheme: expansionTileTheme,
           // extensions: extensions,
-          filledButtonTheme: FilledButtonThemeData(
-            style: ButtonStyle(
-              alignment: Alignment.center,
-              animationDuration: const Duration(milliseconds: 10),
-              backgroundColor: MaterialStateColor.resolveWith(
-                (Set<MaterialState> states) {
-                  if (states.contains(MaterialState.disabled)) {
-                    // * colorScheme surface
-                    return colorSchemeDark.surface;
-                  }
-
-                  // if (states.contains(MaterialState.hovered)) {
-                  //   // * colorScheme surfaceTint
-                  //   return colorSchemeDark.surfaceTint;
-                  // }
-
-                  if (states.contains(MaterialState.focused)) {
-                    // * colorScheme primary
-                    return colorSchemeDark.primary;
-                  }
-
-                  // if (states.contains(MaterialState.pressed)) {
-                  //   // * colorScheme primary
-                  //   return colorSchemeDark.primary;
-                  // }
-
-                  // * colorScheme surface
-                  return colorSchemeDark.surface;
-                },
-              ),
-              // elevation: elevation,
-              // enableFeedback: enableFeedback,
-              // fixedSize: fixedSize,
-              foregroundColor: MaterialStateColor.resolveWith(
-                (Set<MaterialState> states) {
-                  if (states.contains(MaterialState.disabled)) {
-                    // * colorScheme surfaceTint
-                    return colorSchemeDark.surfaceTint;
-                  }
-
-                  // if (states.contains(MaterialState.hovered)) {
-                  //   // * colorScheme onSurface
-                  //   return colorSchemeDark.onSurface;
-                  // }
-
-                  if (states.contains(MaterialState.focused)) {
-                    // * colorScheme onPrimary
-                    return colorSchemeDark.onPrimary;
-                  }
-
-                  // if (states.contains(MaterialState.pressed)) {
-                  //   // * colorScheme onPrimary
-                  //   return colorSchemeDark.onPrimary;
-                  // }
-
-                  // * colorScheme onSurface
-                  return colorSchemeDark.onSurface;
-                },
-              ),
-              // iconColor: iconColor,
-              iconSize: const MaterialStatePropertyAll(36.0),
-              // maximumSize: maximumSize,
-              minimumSize: const MaterialStatePropertyAll(
-                Size(314.0, 56.0),
-              ),
-              // mouseCursor: mouseCursor,
-              // overlayColor: overlayColor,
-              // padding: padding,
-              // shadowColor: shadowColor,
-              shape: const MaterialStatePropertyAll(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(12.0),
-                  ),
-                ),
-              ),
-              // side: null,
-              // splashFactory: splashFactory,
-              // surfaceTintColor: surfaceTintColor,
-              // tapTargetSize: tapTargetSize,
-              textStyle: const MaterialStatePropertyAll(
-                TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              // visualDensity: visualDensity,
-            ),
-          ),
+          // filledButtonTheme: filledButtonTheme,
           // floatingActionButtonTheme: floatingActionButtonTheme,
           // focusColor: focusColor,
           fontFamily: "Poppins",
@@ -672,59 +384,9 @@ class MainApp extends StatelessWidget {
           // primaryColorDark: primaryColorDark,
           // primaryColorLight: primaryColorLight,
           // primaryIconTheme: primaryIconTheme,
-          primaryTextTheme: TextTheme(
-            titleMedium: TextStyle(
-              fontSize: 24.0,
-              // * colorScheme primary
-              color: colorSchemeDark.primary,
-              fontWeight: FontWeight.w500,
-            ),
-            titleSmall: TextStyle(
-              fontSize: 20.0,
-              // * colorScheme primary
-              color: colorSchemeDark.primary,
-              fontWeight: FontWeight.w500,
-            ),
-            bodyLarge: TextStyle(
-              fontSize: 18.0,
-              // * colorScheme primary
-              color: colorSchemeDark.primary,
-              fontWeight: FontWeight.w500,
-            ),
-            bodyMedium: TextStyle(
-              fontSize: 16.0,
-              // * colorScheme primary
-              color: colorSchemeDark.primary,
-              fontWeight: FontWeight.w500,
-            ),
-            bodySmall: TextStyle(
-              fontSize: 14.0,
-              // * colorScheme primary
-              color: colorSchemeDark.primary,
-              fontWeight: FontWeight.w500,
-            ),
-            labelLarge: TextStyle(
-              fontSize: 18.0,
-              // * colorScheme onSurface
-              color: colorSchemeDark.onSurface,
-              fontWeight: FontWeight.w400,
-            ),
-            labelMedium: TextStyle(
-              fontSize: 16.0,
-              // * colorScheme onSurface
-              color: colorSchemeDark.onSurface,
-              fontWeight: FontWeight.w400,
-            ),
-            labelSmall: TextStyle(
-              fontSize: 14.0,
-              // * colorScheme onSurface
-              color: colorSchemeDark.onSurface,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
+          // primaryTextTheme: primaryTextTheme,
           // progressIndicatorTheme: progressIndicatorTheme,
           // radioTheme: radioTheme,
-          // * colorScheme onPrimary
           scaffoldBackgroundColor: colorSchemeDark.onPrimary,
           // scrollbarTheme: scrollbarTheme,
           // secondaryHeaderColor: secondaryHeaderColor,
@@ -736,71 +398,7 @@ class MainApp extends StatelessWidget {
           // splashFactory: splashFactory,
           // switchTheme: switchTheme,
           // tabBarTheme: tabBarTheme,
-          textButtonTheme: TextButtonThemeData(
-            style: ButtonStyle(
-              alignment: Alignment.center,
-              animationDuration: const Duration(milliseconds: 10),
-              backgroundColor:
-                  const MaterialStatePropertyAll(Color(0x00000000)),
-              // elevation: elevation,
-              // enableFeedback: enableFeedback,
-              // fixedSize: fixedSize,
-              foregroundColor: MaterialStateColor.resolveWith(
-                (Set<MaterialState> states) {
-                  if (states.contains(MaterialState.disabled)) {
-                    // * colorScheme surfaceTint
-                    return colorSchemeDark.surfaceTint;
-                  }
-
-                  // if (states.contains(MaterialState.hovered)) {
-                  //   // * colorScheme Primary
-                  //   return colorSchemeDark.primary;
-                  // }
-
-                  if (states.contains(MaterialState.focused)) {
-                    // * colorScheme Primary
-                    return colorSchemeDark.primary;
-                  }
-
-                  // if (states.contains(MaterialState.pressed)) {
-                  //   // * colorScheme Primary
-                  //   return colorSchemeDark.primary;
-                  // }
-
-                  // * colorScheme onSurface
-                  return colorSchemeDark.onSurface;
-                },
-              ),
-              // iconColor: iconColor,
-              // iconSize: iconSize,
-              // maximumSize: maximumSize,
-              minimumSize: const MaterialStatePropertyAll(
-                Size(314.0, 56.0),
-              ),
-              // mouseCursor: mouseCursor,
-              overlayColor: const MaterialStatePropertyAll(Color(0x00000000)),
-              // padding: padding,
-              // shadowColor: shadowColor,
-              shape: const MaterialStatePropertyAll(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(12.0),
-                  ),
-                ),
-              ),
-              // side: null,
-              // splashFactory: splashFactory,
-              // surfaceTintColor: surfaceTintColor,
-              // tapTargetSize: tapTargetSize,
-              textStyle: const MaterialStatePropertyAll(
-                TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              // visualDensity: visualDensity,
-            ),
-          ),
+          // textButtonTheme: textButtonTheme,
           // textSelectionTheme: textSelectionTheme,
           textTheme: TextTheme(
             titleMedium: TextStyle(

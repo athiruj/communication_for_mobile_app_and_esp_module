@@ -1,4 +1,7 @@
 // import 'package:commu_app/boxs_beta.dart';
+import 'dart:ffi';
+
+import 'package:commu_app/boxs_beta.dart';
 import 'package:commu_app/components/filled_button_box.dart';
 import 'package:flutter/material.dart';
 
@@ -162,14 +165,12 @@ class TestPage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          TextButtonBox(
-            onPressed: (){},
-            child: const Text("FilledButtonBox"),
-          ),
-          TextButtonBox(
-            onPressed: null,
-            child: const Text("FilledButtonBox"),
-          ),
+          FilledButtonBox(
+              onPressed: () {},
+              child: const SizedBox(
+                width: 100,
+                child: Text("FilledButtonBox"),
+              ))
         ],
       ),
     );
