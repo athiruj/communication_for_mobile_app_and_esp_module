@@ -2,9 +2,12 @@
 import 'dart:ffi';
 
 import 'package:commu_app/boxs_beta.dart';
+import 'package:commu_app/components/container_bar.dart';
+import 'package:commu_app/components/container_bar_style.dart';
 import 'package:commu_app/components/filled_button_box.dart';
 import 'package:flutter/material.dart';
 
+import '../components/icon_box.dart';
 import '../components/text_button_box.dart';
 
 // class NormalLayout extends StatelessWidget {
@@ -156,21 +159,46 @@ import '../components/text_button_box.dart';
 //   }
 // }
 
-class TestPage extends StatelessWidget {
+class TestPage extends StatefulWidget {
   const TestPage({super.key});
 
+  @override
+  State<TestPage> createState() => _TestPageState();
+}
+
+class _TestPageState extends State<TestPage> {
+  bool selected = false;
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          FilledButtonBox(
-              onPressed: () {},
-              child: const SizedBox(
-                width: 100,
-                child: Text("FilledButtonBox"),
-              ))
+          // Container(
+          //   constraints: const BoxConstraints(
+          //     minWidth: 136.0,
+          //     minHeight: 136.0,
+          //     maxWidth: 440.0,
+          //     maxHeight: 136.0,
+          //   ),
+
+          //   height: 136,
+          //   width: 136,
+          //   decoration: BoxDecoration(
+
+          //   ),
+          // ),
+          // IconButton(onPressed: (){}, icon: const Icon(Icons.abc)),
+          IconBox(
+            icon: const Icon(Icons.abc),
+            isSelected: selected,
+            onPressed: () {
+              setState(() {
+              selected = !selected;
+                
+              });
+            },
+          )
         ],
       ),
     );

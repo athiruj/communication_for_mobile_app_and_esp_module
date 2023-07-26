@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import 'container_bar_style.dart';
+
 abstract class ContainerBar extends StatefulWidget {
   const ContainerBar({
     super.key,
@@ -112,8 +114,8 @@ class _ContainerBarState extends State<ContainerBar>
         effectiveValue((ContainerBarStyle? style) => style?.visualDensity);
     final EdgeInsetsGeometry? resolvedPadding =
         effectiveValue((ContainerBarStyle? style) => style?.padding);
-    final OutlinedBorder? resolveShape =
-        effectiveValue((ContainerBarStyle? style) => style?.shape);
+    final BorderRadius? resolveRadius =
+        effectiveValue((ContainerBarStyle? style) => style?.radius);
     final Duration? resolvedAnimationDuration =
         effectiveValue((ContainerBarStyle? style) => style?.animationDuration);
     final AlignmentGeometry? resolveAlignment =
@@ -145,71 +147,42 @@ class _ContainerBarState extends State<ContainerBar>
       }
     }
 
-    final Widget result = ConstrainedBox(constraints: const BoxConstraints());
-    return Container();
+    final Widget result = Container(
+      padding: resolvedPadding,
+      decoration: BoxDecoration(
+        color: resolvedBackgroundColor,
+        borderRadius: resolveRadius,
+      ),
+      constraints: effectiveConstraints,
+      child: Stack(
+        alignment: resolveAlignment ?? Alignment.center,
+        children: [
+          AnimatedContainer(
+            duration: resolvedAnimationDuration ?? kThemeAnimationDuration,
+            child: Container(
+              // height: ,
+              // width: ,
+              color: resolvedForegroundColor,
+            ),
+          ),
+        ],
+      ),
+    );
+    return result;
   }
 }
 
-class ContainerBarStyle with Diagnosticable {
-  const ContainerBarStyle({
-    this.backgroundColor,
-    this.foregroundColor,
-    this.minimumSize,
-    this.fixedSize,
-    this.maximumSize,
-    this.minimumFactor,
-    this.fixedFactor,
-    this.maximumFactor,
-    this.visualDensity,
-    this.padding,
-    this.shape,
-    this.animationDuration,
-    this.alignment,
-  });
-
-  final Color? backgroundColor;
-  final Color? foregroundColor;
-  final Size? minimumSize;
-  final Size? fixedSize;
-  final Size? maximumSize;
-  final double? minimumFactor;
-  final double? fixedFactor;
-  final double? maximumFactor;
-  final VisualDensity? visualDensity;
-  final EdgeInsetsGeometry? padding;
-  final OutlinedBorder? shape;
-  final Duration? animationDuration;
-  final AlignmentGeometry? alignment;
-
-  ContainerBarStyle copyWith({
-    Color? backgroundColor,
-    Color? foregroundColor,
-    Size? minimumSize,
-    Size? fixedSize,
-    Size? maximumSize,
-    double? minimumFactor,
-    double? fixedFactor,
-    double? maximumFactor,
-    VisualDensity? visualDensity,
-    EdgeInsetsGeometry? padding,
-    OutlinedBorder? shape,
-    Duration? animationDuration,
-    AlignmentGeometry? alignment,
-  }) {
-    return ContainerBarStyle(
-      backgroundColor: backgroundColor ?? this.backgroundColor,
-      foregroundColor: foregroundColor ?? this.foregroundColor,
-      minimumSize: minimumSize ?? this.minimumSize,
-      fixedSize: fixedSize ?? this.fixedSize,
-      maximumSize: maximumSize ?? this.maximumSize,
-      minimumFactor: minimumFactor ?? this.minimumFactor,
-      fixedFactor: fixedFactor ?? this.fixedFactor,
-      maximumFactor: maximumFactor ?? this.maximumFactor,
-      visualDensity: visualDensity ?? this.visualDensity,      
-      padding: padding ?? this.padding,
-      shape: shape ?? this.shape,
-      animationDuration: animationDuration ?? this.animationDuration,
-      alignment: alignment ?? this.alignment,
-    );
+class StatusBar extends ContainerBar {
+  const StatusBar({
+    super.enabled = false,
+    required super.factor,
+    required super.style,
+  }) : super(
+    
+  );
+  @override
+  ContainerBarStyle defaultStyleOf(BuildContext context) {
+    // TODO: implement defaultStyleOf
+    throw UnimplementedError();
   }
 }
